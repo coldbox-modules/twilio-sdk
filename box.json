@@ -1,0 +1,35 @@
+{
+    "name":"twilio-sdk",
+    "version":"0.0.0",
+    "author":"",
+    "location":"elpete/twilio-sdk#v0.0.0",
+    "homepage":"https://github.com/elpete/twilio-sdk",
+    "documentation":"https://github.com/elpete/twilio-sdk",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/elpete/twilio-sdk"
+    },
+    "bugs":"https://github.com/elpete/twilio-sdk/issues",
+    "slug":"twilio-sdk",
+    "shortDescription":"CFML SDK to interact with the Twilio API",
+    "description":"CFML SDK to interact with the Twilio API",
+    "type":"modules",
+    "dependencies":{},
+    "devDependencies":{
+        "testbox":"^2.4.0+80"
+    },
+    "installPaths":{
+        "testbox":"testbox",
+        "coldbox":"tests/resources/app/coldbox"
+    },
+    "scripts":{
+        "postVersion":"package set location='elpete/twilio-sdk#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push && !git push --tags"
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ]
+}
