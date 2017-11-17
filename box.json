@@ -14,14 +14,17 @@
     "shortDescription":"CFML SDK to interact with the Twilio API",
     "description":"CFML SDK to interact with the Twilio API",
     "type":"modules",
-    "dependencies":{},
+    "dependencies":{
+        "hyper":"^0.0.0-semantic-released"
+    },
     "devDependencies":{
         "testbox":"^2.4.0+80",
         "coldbox":"^4.3.0"
     },
     "installPaths":{
         "testbox":"testbox",
-        "coldbox":"tests/resources/app/coldbox"
+        "coldbox":"tests/resources/app/coldbox",
+        "hyper":"modules/hyper"
     },
     "scripts":{
         "postVersion":"package set location='elpete/twilio-sdk#v`package version`'",
@@ -32,5 +35,9 @@
         "**/.*",
         "test",
         "tests"
-    ]
+    ],
+    "testbox":{
+        "runner":"http://127.0.0.1:61453/tests/runner.cfm",
+        "verbose":"false"
+    }
 }
