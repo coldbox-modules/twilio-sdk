@@ -43,7 +43,14 @@
 			handlerCaching 			= false,
 			eventCaching			= false,
 			viewCaching				= false
-		};
+        };
+
+        moduleSettings = {
+            "twilio-sdk" = {
+                "accountSID" = getSystemSetting( "TWILIO_ACCOUNT_SID" ),
+                "authToken" = getSystemSetting( "TWILIO_AUTHTOKEN" )
+            }
+        };
 
 		// custom settings
 		settings = {
@@ -149,6 +156,26 @@
 	*/
 	function development(){
 		coldbox.customErrorTemplate = "/coldbox/system/includes/BugReport.cfm";
-	}
+    }
+
+    function getSystemSetting( name, defaultValue ) {
+        var system = createObject( "java", "java.lang.System" );
+
+        var envValue = system.getEnv( name );
+        if ( ! isNull( envValue ) ) {
+            return envValue;
+        }
+
+        var propValue = system.getProperty( name );
+        if ( ! isNull( propValue ) ) {
+            return propValue;
+        }
+
+        if ( ! isNull( defaultValue ) ) {
+            return defaultValue;
+        }
+
+        throw( "No environment variable or system property found for [#name#]" );
+    }
 
 }
