@@ -28,7 +28,7 @@ component extends="tests.resources.ModuleIntegrationSpec" appMapping="/app" {
                     body = "Testing 123"
                 );
 
-                expect( req ).toBeInstanceOf( "HyperRequest", "req should be the HyperRequest still" );
+                expect( req ).toBeInstanceOf( "Hyper.models.HyperRequest", "req should be the HyperRequest still" );
             } );
         } );
     }

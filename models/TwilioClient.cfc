@@ -10,6 +10,18 @@ component accessors="true" {
     property name="accountSID" inject="coldbox:setting:accountSID@twilio-sdk";
     property name="wirebox" inject="wirebox" setter="false";
 
+    function lookupPhoneNumber( phoneNumber, send = true ) {
+        var req = variables.newRequest()
+            .setBaseUrl( "https://lookups.twilio.com" )
+            .setUrl( "/v1/PhoneNumbers/#phoneNumber#" );
+
+        if ( send ) {
+            return req.send();
+        }
+
+        return req;
+    }
+
     function createSMS( to, from, body ) {
         return variables.newRequest()
             .setMethod( "POST" )
@@ -30,7 +42,7 @@ component accessors="true" {
     }
 
     function onMissingMethod( missingMethodName, missingMethodArguments ) {
-        return invoke( variables.new(), missingMethodName, missingMethodArguments );
+        return invoke( variables.newRequest(), missingMethodName, missingMethodArguments );
     }
 
 }

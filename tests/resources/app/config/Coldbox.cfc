@@ -47,8 +47,8 @@
 
         moduleSettings = {
             "twilio-sdk" = {
-                "accountSID" = getSystemSetting( "TWILIO_ACCOUNT_SID" ),
-                "authToken" = getSystemSetting( "TWILIO_AUTHTOKEN" )
+                "accountSID" = getSystemSetting( "TWILIO_TEST_ACCOUNT_SID" ),
+                "authToken" = getSystemSetting( "TWILIO_TEST_AUTHTOKEN" )
             }
         };
 
