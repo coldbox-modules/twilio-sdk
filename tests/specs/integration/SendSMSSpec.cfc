@@ -11,18 +11,18 @@ component extends="tests.resources.ModuleIntegrationSpec" appMapping="/app" {
             } );
 
             it( "can send an SMS message", function() {
-                var res = twilioClient.sendSMS(
+                var res = twilioClient.sms(
                     from = "+15005550006",
                     to = "+18015550005",
                     body = "Testing 123"
-                );
+                ).send();
 
                 expect( res.getStatusCode() ).toBe( 201, "Response should be a 201 Created" );
                 expect( res.json().body ).toInclude( "Testing 123" );
             } );
 
             it( "can create an SMS message without sending it", function() {
-                var req = twilioClient.createSMS(
+                var req = twilioClient.sms(
                     from = "+15005550006",
                     to = "+18015550005",
                     body = "Testing 123"
