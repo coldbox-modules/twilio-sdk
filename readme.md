@@ -52,10 +52,10 @@ be immediately executed by calling `send`, or it can be configured further.
 The following is an example of creating an SMS message but then overriding the
 default URL to allow for subaccount billing.
 
-```js
+```cfc
 var req = twilioClient
-  .sms((from = "+15005550006"), (to = "+18015550005"), (body = "Testing 123"))
-  .setUrl("/Accounts/#subAccountSID#/Messages.json")
+  .sms( from = "+15005550006", to = "+18015550005", body = "Testing 123" )
+  .setUrl( "/Accounts/#subAccountSID#/Messages.json" )
   .send();
 ```
 
@@ -65,7 +65,7 @@ new request will be created, your method called, and the result returned to you.
 Hyper is so powerful in this case because it can be pre-configured with common
 values. This is done for your in the `ModuleConfig.cfc`:
 
-```js
+```cfc
 binder.map( "TwilioHyperClient@twilio-sdk" )
     .to( "hyper.models.HyperBuilder" )
     .asSingleton()
@@ -87,7 +87,7 @@ Because of Hyper, you don't have to specify those parameters every request. 👍
 In a non-ColdBox application, you'll need to initialize the models and settings
 yourself, like so:
 
-```js
+```cfc
 var hyperClient = new Hyper.models.HyperBuilder(
     username = accountSID,
     password = authToken,
