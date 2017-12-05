@@ -13,11 +13,11 @@
         "testbox":"^2.5.0"
     },
     "installPaths":{
-        "coldbox":"coldbox",
-        "testbox":"testbox",
-        "workbench":"workbench",
-        "hyper":"modules/hyper",
-        "docbox":"docbox"
+        "coldbox":"coldbox/",
+        "testbox":"testbox/",
+        "workbench":"workbench/",
+        "hyper":"modules/hyper/",
+        "docbox":"docbox/"
     },
     "testbox":{
         "runner":"http://localhost:49616"

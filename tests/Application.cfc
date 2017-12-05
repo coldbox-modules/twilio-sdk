@@ -15,8 +15,7 @@ component{
 	rootPath = REReplaceNoCase( this.mappings[ "/tests" ], "tests(\\|/)", "" );
     this.mappings[ "/root" ]   = rootPath;
     this.mappings[ "/app" ] = rootPath;
-	this.mappings[ "/cbvalidation" ]   = rootPath & "modules/cbvalidation";
-	this.mappings[ "/cbi18n" ]   = rootPath & "modules/cbi18n";
+    this.mappings[ "/coldbox" ] = rootPath & "coldbox";
 	this.mappings[ "/hyper" ]   = rootPath & "modules/hyper";
 	this.mappings[ "/twilio-sdk" ]   = rootPath & "modules/twilio-sdk";
 
