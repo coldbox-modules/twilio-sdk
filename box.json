@@ -1,43 +1,28 @@
 {
-    "name":"twilio-sdk",
-    "version":"0.0.0",
-    "author":"",
-    "location":"elpete/twilio-sdk#v0.0.0",
-    "homepage":"https://github.com/elpete/twilio-sdk",
-    "documentation":"https://github.com/elpete/twilio-sdk",
-    "repository":{
-        "type":"git",
-        "URL":"https://github.com/elpete/twilio-sdk"
-    },
-    "bugs":"https://github.com/elpete/twilio-sdk/issues",
-    "slug":"twilio-sdk",
-    "shortDescription":"CFML SDK to interact with the Twilio API",
-    "description":"CFML SDK to interact with the Twilio API",
-    "type":"modules",
+    "name":"Twilio SDK Builder",
+    "version":"1.3.0",
+    "slug":"twilio-sdk-shell",
+    "private":false,
     "dependencies":{
-        "hyper":"^1.0.0"
+        "coldbox":"^4.3.0",
+        "workbench":"git+https://github.com/Ortus-Solutions/unified-workbench.git",
+        "hyper":"^1.4.1",
+        "docbox":"^2.0.7+00005"
     },
     "devDependencies":{
-        "testbox":"^2.4.0+80",
-        "coldbox":"^4.3.0"
+        "testbox":"^2.5.0"
     },
     "installPaths":{
+        "coldbox":"coldbox",
         "testbox":"testbox",
-        "coldbox":"tests/resources/app/coldbox",
-        "hyper":"modules/hyper"
+        "workbench":"workbench",
+        "hyper":"modules/hyper",
+        "docbox":"docbox"
+    },
+    "testbox":{
+        "runner":"http://localhost:49616"
     },
     "scripts":{
-        "postVersion":"package set location='elpete/twilio-sdk#v`package version`'",
-        "onRelease":"publish",
-        "postPublish":"!git push && !git push --tags"
-    },
-    "ignore":[
-        "**/.*",
-        "test",
-        "tests"
-    ],
-    "testbox":{
-        "runner":"http://127.0.0.1:61453/tests/runner.cfm",
-        "verbose":"false"
+        "postVersion":"recipe workbench/bump.boxr"
     }
 }
