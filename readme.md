@@ -18,7 +18,20 @@ Apache License, Version 2.0.
 * Lucee 4.5+
 * Adobe ColdFusion 11+
 
-### Methods
+## Setup
+
+Configure your Twilio credentials in the `config/ColdBox.cfc` file.
+
+```
+moduleSettings = {
+    "twilio-sdk" = {
+        accountSID = "",
+        authToken = ""
+    }
+};
+```
+
+## Methods
 
 #### lookup
 
