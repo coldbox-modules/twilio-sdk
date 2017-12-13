@@ -15,7 +15,7 @@
   "description": "CFML SDK to interact with the Twilio API",
   "type": "modules",
   "dependencies": {
-    "hyper": "^1.0.0"
+    "hyper": "^1.5.0"
   },
   "devDependencies": {
     "testbox": "^2.4.0+80",
