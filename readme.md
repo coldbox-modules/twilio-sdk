@@ -31,6 +31,20 @@ moduleSettings = {
 };
 ```
 
+Then you can inject it into your handlers or models using the following injection DSL:
+
+```cfc
+property name="TwilioClient" inject="TwilioClient@twilio-sdk";
+```
+
+And send a text message like this:
+
+```cfc
+var req = twilioClient
+  .sms( from = "+15005550006", to = "+18015550005", body = "Testing 123" )
+  .send();
+```
+
 ## `TwilioClient`
 
 #### lookup
