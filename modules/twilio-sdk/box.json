@@ -2,7 +2,7 @@
   "name": "twilio-sdk",
   "version": "@build.version@+@build.number@",
   "author": "Ortus Solutions",
-  "location": "http://downloads.ortussolutions.com/ortussolutions/coldbox-modules/twilio-sdk/@build.version@/twilio-sdk-@build.version@.zip",
+  "location": "https://downloads.ortussolutions.com/ortussolutions/coldbox-modules/twilio-sdk/@build.version@/twilio-sdk-@build.version@.zip",
   "homepage": "https://github.com/coldbox-modules/twilio-sdk",
   "documentation": "https://github.com/coldbox-modules/twilio-sdk",
   "repository": {
