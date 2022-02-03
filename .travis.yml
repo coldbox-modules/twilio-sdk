@@ -17,10 +17,6 @@ branches:
   - development
   - master
 
-dist: trusty
-
-sudo: required
-
 before_install:
   # CommandBox Keys
   - curl -fsSl https://downloads.ortussolutions.com/debs/gpg | sudo apt-key add -
