@@ -90,4 +90,4 @@ deploy:
 
 
 after_deploy:
-  - cd $TRAVIS_BUILD_DIR/build && box forgebox publish
+  - cd $TRAVIS_BUILD_DIR/build && ls && cat box.json && box forgebox publish
