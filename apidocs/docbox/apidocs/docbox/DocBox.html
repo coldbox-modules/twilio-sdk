@@ -1,0 +1,1005 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DocBox</title>
+	<meta name="keywords" content="docbox.concurrent.Callable interface">
+	<!-- common assets -->
+	
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel ="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+<link rel ="stylesheet" type="text/css" href="../stylesheet.css">
+	
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
+	
+<script src="../bootstrap/js/jquery-2.1.0.min.js" type="text/javascript"></script>
+<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+	// Global Tool Tip Settings
+	$( '[title]' ).tooltip({
+		 animation: 'slide',
+		 delay: { show: 250, hide: 250 }
+	});
+});
+</script>
+	<!-- syntax highlighter -->
+	<link type="text/css" rel="stylesheet" href="../highlighter/styles/shCoreDefault.css">
+	<script src="../highlighter/scripts/shCore.js"></script>
+	<script src="../highlighter/scripts/shBrushColdFusion.js"></script>
+	<script src="../highlighter/scripts/shBrushXml.js"></script>
+	<script src="../highlighter/scripts/shBrushSql.js"></script>
+	<script src="../highlighter/scripts/shBrushJScript.js"></script>
+	<script src="../highlighter/scripts/shBrushJava.js"></script>
+	<script src="../highlighter/scripts/shBrushCss.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body class="withNavbar">
+
+
+
+
+
+
+<!-- ========= START OF NAVBAR ======= -->
+<a name="navbar_top"></a>
+<a href="#skip-navbar_top" title="skip navigation links"></a>	
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+    
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#class-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><strong>DocBox v2.2.1</strong></a>
+		</div>
+
+	    <div class="collapse navbar-collapse" id="class-navigation">
+	    	<ul class="nav navbar-nav">
+				
+					
+					<li><a href="../overview-summary.html"><i class="glyphicon glyphicon-plane"></i> overview</a></li>
+					
+				
+
+				
+					<li><a href="package-summary.html"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;package</a></li>
+				
+
+			  	
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-file"></i> class <b class="caret"></b></a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#class">Class Definition</a></li>
+							<li><a href="#constructor_summary">Constructor Summary</a></li>
+							<li><a href="#constructor_detail">Constructor Detail</a></li>
+							<li><a href="#inherited_methods">Inherited Methods</a></li>
+							<li><a href="#method_summary">Method Summary</a></li>
+							<li><a href="#method_detail">Method Detail</a></li>
+							<li><a href="#property_summary">Property Summary</a></li>
+							<li><a href="#property_detail">Property Detail</a></li>
+							
+						</ul>
+					</li>
+				
+	      	</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="../index.html?docbox/DocBox.html" target="_top">
+					<i class="glyphicon glyphicon-fullscreen"></i> Frames
+					</a>
+				</li>
+			</ul>
+	    </div>
+
+	</div>
+</nav>	
+
+<a name="skip-navbar_top"></a>
+<!-- ========= END OF NAVBAR ========= -->
+
+<!-- ======== start of class data ======== -->
+<a name="class"><!-- --></a>
+
+<!-- Package -->
+<div class="pull-right">
+	<a href="package-summary.html" title="Package: docbox"><span class="label label-success">docbox</span></a>
+</div>
+
+<h2>
+
+
+Class
+
+ DocBox</h2>
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+	
+		
+		
+			
+		
+	
+	
+
+
+<!-- Inheritance Tree-->
+<pre style="background:white">lucee.Component
+    <img src="../resources/inherit.gif" alt="extended by ">docbox.DocBox
+</pre>
+
+
+
+	
+	
+
+
+
+
+
+
+
+<div id="class-hint">
+	<p>Core DocBox documentation class
+<br>
+<small><em>Copyright 2015 Ortus Solutions, Corp <a href="www.ortussolutions.com">www.ortussolutions.com</a></em></small></p>
+</div>
+
+
+<!-- Clas Attributes -->
+<div class="panel panel-info">
+	<div class="panel-heading"><strong>Class Attributes:</strong></div>
+		<div class="panel-body">
+		
+		
+			
+		
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				synchronized
+				
+				: false
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				accessors
+				
+				: true
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				persistent
+				
+				: false
+				
+			</li>
+			&nbsp;
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				author
+				
+				: Luis Majano <lmajano@ortussolutions.com>
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+		
+		
+	</div>
+</div>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="property_summary"><!-- --></a>
+<table class="table table-bordered table-hover">
+	<tr class="info">
+		<th align="left" colspan="5">
+			<strong>Property Summary</strong>
+		</th>
+	</tr>
+	<tr class="info">
+		<th align="left">
+			<strong>type</strong>
+		</th>
+		<th align="left">
+			<strong>property</strong>
+		</th>
+		<th align="left">
+			<strong>default</strong>
+		</th>
+		<th align="left">
+			<strong>serializable</strong>
+		</th>
+		<th align="left">
+			<strong>required</strong>
+		</th>
+	</tr>
+
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any&lt;<a href="../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a>&gt;</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#strategy()">strategy</A></strong>
+			<br>
+			
+			<!-- only grab the first sentence of the hint -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The strategy to use for document generation.
+			
+			<br><br>
+			<ul>
+			
+				
+			
+				
+				<li class="label label-default label-annotations">access = public</li>
+				
+			
+				
+			
+				
+			
+				
+				<li class="label label-default label-annotations">returntype = any</li>
+				
+			
+				
+				<li class="label label-default label-annotations">doc_generic = docbox.strategy.AbstractTemplateStrategy</li>
+				
+			
+				
+			
+				
+			
+				
+			
+			</ul>
+
+		</td>
+		<td align="right" valign="top" width="1%">
+			
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				true
+			</code>
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+	</tr>
+	
+	</tr>
+</table>
+
+
+
+	
+	
+	<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+	<a name="constructor_summary"><!-- --></a>
+	<table class="table table-bordered table-hover">
+		<tr class="info">
+			<th align="left" colspan="2">
+				<strong>Constructor Summary</strong>
+			</th>
+		</tr>
+		<tr>
+			
+			<td>
+				<strong><a href="DocBox.html#init()">init</A></strong>([any strategy='docbox.strategy.api.HTMLAPIStrategy'], [struct properties='[runtime expression]'])
+				<br>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Constructor.
+				
+			</td>
+		</tr>
+	</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="method_summary"><!-- --></a>
+<table class="table table-bordered table-hover">
+	<tr class="info">
+		<th align="left" colspan="2">
+			<strong>Method Summary</strong>
+		</th>
+	</tr>
+
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>query</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#buildMetaDataCollection()">buildMetaDataCollection</A></strong>(array inputSource, [string excludes=''])
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Builds the searchable meta data collection.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;any</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#cleanPath()">cleanPath</A></strong>(any path, any inputDir)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clean input path.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code><a href="../docbox/DocBox.html" title="class in docbox">DocBox</a></code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#generate()">generate</A></strong>(any source, [string mapping=''], [string excludes=''])
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate the docs.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;array</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#getImplements()">getImplements</A></strong>(struct metadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets an array of the classes that this metadata implements, in order of extension.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;array</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#getInheritance()">getInheritance</A></strong>(struct metadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets an array of the classes that this metadata extends, in order of extension.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>string</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#getStrategy()">getStrategy</A></strong>()
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#setStrategy()">setStrategy</A></strong>(any strategy)
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="DocBox.html#testFunction()">testFunction</A></strong>([any param1], [any param2])
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Undocumented function.
+			
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<a name="inherited_methods"><!-- --></a>
+
+
+	
+
+	
+
+	&nbsp;
+	<a name="methods_inherited_from_class_lucee.Component"><!-- --></a>
+	<table class="table table-hover table-bordered">
+		<tr class="info">
+			<th align="left">
+				<strong>Methods inherited from class <kbd>lucee.Component</kbd></strong>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				
+				
+				
+
+				
+					<span class="label label-warning"><em>None</em></span>
+				
+			</td>
+		</tr>
+	</table>
+
+
+<hr>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+	<a name="constructor_detail"><!-- --></a>
+	<table class="table table-bordered">
+		<tr class="info">
+			<th colspan="1" align="left">
+				<strong>Constructor Detail</strong>
+			</th>
+		</tr>
+	</table>
+
+	<a name="init()"><!-- --></a><h3>
+	init</h3>
+	<kbd>public <strong>init</strong>([any strategy='docbox.strategy.api.HTMLAPIStrategy'], [struct properties='[runtime expression]'])</kbd>
+
+	<br><br>
+
+	
+	<p>Constructor
+we create the default strategy of 'docbox.strategy.api.HTMLAPIStrategy'</p>
+	
+
+	
+	<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+			<dd><code>strategy</code> - The optional strategy to generate the documentation with. This can be a class path or an instance of the strategy. If none is passed then</dd>
+		
+			<dd><code>properties</code> - The struct of properties to instantiate the strategy with.</dd>
+		
+	</dl>
+	
+	<hr>
+
+
+<!-- ============ PROPERTY DETAIL ========== -->
+
+	<a name="property_detail"><!-- --></a>
+	<table class="table table-bordered">
+		<tr class="info">
+			<th colspan="1" align="left">
+				<strong>Property Detail</strong>
+			</th>
+		</tr>
+	</table>
+
+	
+		
+		<a name="strategy()"><!-- --></a>
+		<h3>strategy</h3>
+
+		<kbd>
+			property any&lt;<a href="../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a>&gt;
+			<strong>strategy</strong>
+			
+		</kbd>
+
+		<br><br>
+		
+			<p>The strategy to use for document generation. Must extend docbox.strategy.AbstractTemplateStrategy</p>
+		
+
+		<dl>
+		<dt><strong>Attributes:</strong></dt>
+		
+			
+		
+			
+			<dd><code>access</code> - public</dd>
+			
+		
+			
+			<dd><code>required</code> - false</dd>
+			
+		
+			
+		
+			
+			<dd><code>returntype</code> - any</dd>
+			
+		
+			
+			<dd><code>doc_generic</code> - docbox.strategy.AbstractTemplateStrategy</dd>
+			
+		
+			
+		
+			
+		
+			
+			<dd><code>serializable</code> - true</dd>
+			
+		
+		</dl>
+
+		<hr>
+	
+
+
+
+
+
+
+
+
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<a name="method_detail"><!-- --></a>
+<table class="table table-bordered">
+	<tr class="info">
+		<th colspan="1" align="left">
+			<strong>Method Detail</strong>
+		</th>
+	</tr>
+</table>
+
+
+	
+	<a name="buildMetaDataCollection()"><!-- --></a>
+	<h3>
+		buildMetaDataCollection
+		
+	</h3>
+
+	<kbd>public query <strong>buildMetaDataCollection</strong>(array inputSource, [string excludes=''])</kbd>
+
+	<br><br>
+
+	
+		<p>Builds the searchable meta data collection</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>inputSource</code> - an array of structs containing inputDir and mapping</dd>
+		
+		<dd><code>excludes</code> - A regex that will be applied to the input source to exclude from the docs</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="cleanPath()"><!-- --></a>
+	<h3>
+		cleanPath
+		
+	</h3>
+
+	<kbd>private any <strong>cleanPath</strong>(any path, any inputDir)</kbd>
+
+	<br><br>
+
+	
+		<p>Clean input path</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>path</code> - The incoming path to clean</dd>
+		
+		<dd><code>inputDir</code> - The input dir to clean off</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="generate()"><!-- --></a>
+	<h3>
+		generate
+		
+	</h3>
+
+	<kbd>public <a href="../docbox/DocBox.html" title="class in docbox">DocBox</a> <strong>generate</strong>(any source, [string mapping=''], [string excludes=''])</kbd>
+
+	<br><br>
+
+	
+		<p>Generate the docs</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>source</code> - Either, the string directory source, OR an array of structs containing 'dir' and 'mapping' key</dd>
+		
+		<dd><code>mapping</code> - The base mapping for the folder. Only required if the source is a string</dd>
+		
+		<dd><code>excludes</code> - A regex that will be applied to the input source to exclude from the docs</dd>
+		
+		</dl>
+	
+
+	
+		<dl>
+			<dt><strong>Returns:</strong></dt>
+			<dd>The DocBox instance</dd>
+		</dl>
+	
+
+	
+		<dl>
+			<dt><strong>Throws:</strong></dt>
+			<dd>StrategyNotSetException</dd>
+		</dl>
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getImplements()"><!-- --></a>
+	<h3>
+		getImplements
+		
+	</h3>
+
+	<kbd>private array <strong>getImplements</strong>(struct metadata)</kbd>
+
+	<br><br>
+
+	
+		<p>Gets an array of the classes that this metadata implements, in order of extension</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>metadata</code> - The metadata to look at</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getInheritance()"><!-- --></a>
+	<h3>
+		getInheritance
+		
+	</h3>
+
+	<kbd>private array <strong>getInheritance</strong>(struct metadata)</kbd>
+
+	<br><br>
+
+	
+		<p>Gets an array of the classes that this metadata extends, in order of extension</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>metadata</code> - The metadata to look at</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getStrategy()"><!-- --></a>
+	<h3>
+		getStrategy
+		
+	</h3>
+
+	<kbd>public string <strong>getStrategy</strong>()</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="setStrategy()"><!-- --></a>
+	<h3>
+		setStrategy
+		
+	</h3>
+
+	<kbd>public any <strong>setStrategy</strong>(any strategy)</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>strategy</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="testFunction()"><!-- --></a>
+	<h3>
+		testFunction
+		
+			<span class="label label-danger">Deprecated</span>
+		
+	</h3>
+
+	<kbd>public any <strong>testFunction</strong>([any param1], [any param2])</kbd>
+
+	<br><br>
+
+	
+		<p>Undocumented function</p>
+	
+
+	
+		<dl>
+			<dt><span class="label label-danger"><strong>Deprecated:</strong></span></dt>
+			<dd>This is no longer in use.</dd>
+		</dl>
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>param1</code> - param 1</dd>
+		
+		<dd><code>param2</code> - param 2</dd>
+		
+		</dl>
+	
+
+	
+		<dl>
+			<dt><strong>Returns:</strong></dt>
+			<dd>Nothing</dd>
+		</dl>
+	
+
+	
+		<dl>
+			<dt><strong>Throws:</strong></dt>
+			<dd>Throws X,Y and Z</dd>
+		</dl>
+	
+
+	</dl>
+	<hr>
+
+
+
+
+</body>
+</html>
+

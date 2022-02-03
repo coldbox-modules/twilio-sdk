@@ -1,0 +1,1352 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HTMLAPIStrategy</title>
+	<meta name="keywords" content="docbox.strategy.api.concurrent.Callable interface">
+	<!-- common assets -->
+	
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel ="stylesheet" type="text/css" href="../../../bootstrap/css/bootstrap.min.css">
+<link rel ="stylesheet" type="text/css" href="../../../stylesheet.css">
+	
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
+	
+<script src="../../../bootstrap/js/jquery-2.1.0.min.js" type="text/javascript"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+	// Global Tool Tip Settings
+	$( '[title]' ).tooltip({
+		 animation: 'slide',
+		 delay: { show: 250, hide: 250 }
+	});
+});
+</script>
+	<!-- syntax highlighter -->
+	<link type="text/css" rel="stylesheet" href="../../../highlighter/styles/shCoreDefault.css">
+	<script src="../../../highlighter/scripts/shCore.js"></script>
+	<script src="../../../highlighter/scripts/shBrushColdFusion.js"></script>
+	<script src="../../../highlighter/scripts/shBrushXml.js"></script>
+	<script src="../../../highlighter/scripts/shBrushSql.js"></script>
+	<script src="../../../highlighter/scripts/shBrushJScript.js"></script>
+	<script src="../../../highlighter/scripts/shBrushJava.js"></script>
+	<script src="../../../highlighter/scripts/shBrushCss.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body class="withNavbar">
+
+
+
+
+
+
+<!-- ========= START OF NAVBAR ======= -->
+<a name="navbar_top"></a>
+<a href="#skip-navbar_top" title="skip navigation links"></a>	
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+    
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#class-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><strong>DocBox v2.2.1</strong></a>
+		</div>
+
+	    <div class="collapse navbar-collapse" id="class-navigation">
+	    	<ul class="nav navbar-nav">
+				
+					
+					<li><a href="../../../overview-summary.html"><i class="glyphicon glyphicon-plane"></i> overview</a></li>
+					
+				
+
+				
+					<li><a href="package-summary.html"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;package</a></li>
+				
+
+			  	
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-file"></i> class <b class="caret"></b></a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#class">Class Definition</a></li>
+							<li><a href="#constructor_summary">Constructor Summary</a></li>
+							<li><a href="#constructor_detail">Constructor Detail</a></li>
+							<li><a href="#inherited_methods">Inherited Methods</a></li>
+							<li><a href="#method_summary">Method Summary</a></li>
+							<li><a href="#method_detail">Method Detail</a></li>
+							<li><a href="#property_summary">Property Summary</a></li>
+							<li><a href="#property_detail">Property Detail</a></li>
+							
+						</ul>
+					</li>
+				
+	      	</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="../../../index.html?docbox/strategy/api/HTMLAPIStrategy.html" target="_top">
+					<i class="glyphicon glyphicon-fullscreen"></i> Frames
+					</a>
+				</li>
+			</ul>
+	    </div>
+
+	</div>
+</nav>	
+
+<a name="skip-navbar_top"></a>
+<!-- ========= END OF NAVBAR ========= -->
+
+<!-- ======== start of class data ======== -->
+<a name="class"><!-- --></a>
+
+<!-- Package -->
+<div class="pull-right">
+	<a href="package-summary.html" title="Package: docbox.strategy.api"><span class="label label-success">docbox.strategy.api</span></a>
+</div>
+
+<h2>
+
+
+Class
+
+ HTMLAPIStrategy</h2>
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+	
+		
+		
+			
+		
+	
+	
+
+	
+		
+		
+			
+		
+	
+	
+
+
+<!-- Inheritance Tree-->
+<pre style="background:white">lucee.Component
+    <img src="../../../resources/inherit.gif" alt="extended by "><a href="../../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">docbox.strategy.AbstractTemplateStrategy</a>
+      <img src="../../../resources/inherit.gif" alt="extended by ">docbox.strategy.api.HTMLAPIStrategy
+</pre>
+
+
+
+	
+	
+
+
+
+
+
+
+
+<div id="class-hint">
+	<p>Default Document Strategy for DocBox
+<br>
+<small><em>Copyright 2015 Ortus Solutions, Corp <a href="www.ortussolutions.com">www.ortussolutions.com</a></em></small></p>
+</div>
+
+
+<!-- Clas Attributes -->
+<div class="panel panel-info">
+	<div class="panel-heading"><strong>Class Attributes:</strong></div>
+		<div class="panel-body">
+		
+		
+			
+		
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				synchronized
+				
+				: false
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				accessors
+				
+				: true
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				persistent
+				
+				: false
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+		
+		
+	</div>
+</div>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="property_summary"><!-- --></a>
+<table class="table table-bordered table-hover">
+	<tr class="info">
+		<th align="left" colspan="5">
+			<strong>Property Summary</strong>
+		</th>
+	</tr>
+	<tr class="info">
+		<th align="left">
+			<strong>type</strong>
+		</th>
+		<th align="left">
+			<strong>property</strong>
+		</th>
+		<th align="left">
+			<strong>default</strong>
+		</th>
+		<th align="left">
+			<strong>serializable</strong>
+		</th>
+		<th align="left">
+			<strong>required</strong>
+		</th>
+	</tr>
+
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>string</code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#outputDir()">outputDir</A></strong>
+			<br>
+			
+			<!-- only grab the first sentence of the hint -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The output directory.
+			
+			<br><br>
+			<ul>
+			
+				
+			
+				
+				<li class="label label-default label-annotations">access = public</li>
+				
+			
+				
+			
+				
+			
+				
+				<li class="label label-default label-annotations">returntype = any</li>
+				
+			
+				
+			
+				
+			
+				
+			
+			</ul>
+
+		</td>
+		<td align="right" valign="top" width="1%">
+			
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				true
+			</code>
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>string</code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#projectTitle()">projectTitle</A></strong>
+			<br>
+			
+			<!-- only grab the first sentence of the hint -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The project title to use.
+			
+			<br><br>
+			<ul>
+			
+				
+			
+				
+				<li class="label label-default label-annotations">access = public</li>
+				
+			
+				
+			
+				
+			
+				
+				<li class="label label-default label-annotations">returntype = any</li>
+				
+			
+				
+			
+				
+			
+				
+			
+			</ul>
+
+		</td>
+		<td align="right" valign="top" width="1%">
+			
+				<code>Untitled</code>
+			
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				true
+			</code>
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+	</tr>
+	
+	</tr>
+</table>
+
+
+
+	
+	
+	<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+	<a name="constructor_summary"><!-- --></a>
+	<table class="table table-bordered table-hover">
+		<tr class="info">
+			<th align="left" colspan="2">
+				<strong>Constructor Summary</strong>
+			</th>
+		</tr>
+		<tr>
+			
+			<td>
+				<strong><a href="HTMLAPIStrategy.html#init()">init</A></strong>(any outputDir, [string projectTitle='Untitled'])
+				<br>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Constructor.
+				
+			</td>
+		</tr>
+	</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="method_summary"><!-- --></a>
+<table class="table table-bordered table-hover">
+	<tr class="info">
+		<th align="left" colspan="2">
+			<strong>Method Summary</strong>
+		</th>
+	</tr>
+
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code><a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#buildClassPages()">buildClassPages</A></strong>(query qPackage, query qMetadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builds the class pages.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>string</code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#getOutputDir()">getOutputDir</A></strong>()
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>string</code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#getProjectTitle()">getProjectTitle</A></strong>()
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code><a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#run()">run</A></strong>(query qMetadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Run this strategy.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#setOutputDir()">setOutputDir</A></strong>(string outputDir)
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#setProjectTitle()">setProjectTitle</A></strong>(string projectTitle)
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code><a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#writeAllClassesFrame()">writeAllClassesFrame</A></strong>(query qMetadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writes the allclasses-frame.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code><a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#writeOverviewSummaryAndFrame()">writeOverviewSummaryAndFrame</A></strong>(query qMetadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writes the overview-summary.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code><a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="HTMLAPIStrategy.html#writePackagePages()">writePackagePages</A></strong>(query qMetadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writes the package summaries.
+			
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<a name="inherited_methods"><!-- --></a>
+
+
+	
+
+	
+
+	&nbsp;
+	<a name="methods_inherited_from_class_docbox.strategy.AbstractTemplateStrategy"><!-- --></a>
+	<table class="table table-hover table-bordered">
+		<tr class="info">
+			<th align="left">
+				<strong>Methods inherited from class <kbd><a href="../../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">docbox.strategy.AbstractTemplateStrategy</a></kbd></strong>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				
+				
+				
+					
+					
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+
+				
+					<a href="../../../docbox/strategy/AbstractTemplateStrategy.html#buildFunctionMetaData()">buildFunctionMetaData</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#buildPackageTree()">buildPackageTree</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#buildPropertyMetaData()">buildPropertyMetaData</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#classExists()">classExists</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#ensureDirectory()">ensureDirectory</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#getFunctionQueryCache()">getFunctionQueryCache</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#getGenericTypes()">getGenericTypes</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#getMetaSubQuery()">getMetaSubQuery</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#getObjectName()">getObjectName</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#getPackage()">getPackage</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#getPropertyMeta()">getPropertyMeta</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#getPropertyQueryCache()">getPropertyQueryCache</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#isAbstractClass()">isAbstractClass</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#isPrimitive()">isPrimitive</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#resolveClassName()">resolveClassName</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#safeFunctionMeta()">safeFunctionMeta</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#safeParamMeta()">safeParamMeta</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#safePropertyMeta()">safePropertyMeta</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#setFunctionQueryCache()">setFunctionQueryCache</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#setPropertyQueryCache()">setPropertyQueryCache</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#typeExists()">typeExists</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#visitPackageTree()">visitPackageTree</a>, <a href="../../../docbox/strategy/AbstractTemplateStrategy.html#writeTemplate()">writeTemplate</a>
+				
+			</td>
+		</tr>
+	</table>
+
+	
+
+	
+
+	&nbsp;
+	<a name="methods_inherited_from_class_lucee.Component"><!-- --></a>
+	<table class="table table-hover table-bordered">
+		<tr class="info">
+			<th align="left">
+				<strong>Methods inherited from class <kbd>lucee.Component</kbd></strong>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				
+				
+				
+
+				
+					<span class="label label-warning"><em>None</em></span>
+				
+			</td>
+		</tr>
+	</table>
+
+
+<hr>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+	<a name="constructor_detail"><!-- --></a>
+	<table class="table table-bordered">
+		<tr class="info">
+			<th colspan="1" align="left">
+				<strong>Constructor Detail</strong>
+			</th>
+		</tr>
+	</table>
+
+	<a name="init()"><!-- --></a><h3>
+	init</h3>
+	<kbd>public <strong>init</strong>(any outputDir, [string projectTitle='Untitled'])</kbd>
+
+	<br><br>
+
+	
+	<p>Constructor</p>
+	
+
+	
+	<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+			<dd><code>outputDir</code> - The output directory</dd>
+		
+			<dd><code>projectTitle</code> - The title used in the HTML output</dd>
+		
+	</dl>
+	
+	<hr>
+
+
+<!-- ============ PROPERTY DETAIL ========== -->
+
+	<a name="property_detail"><!-- --></a>
+	<table class="table table-bordered">
+		<tr class="info">
+			<th colspan="1" align="left">
+				<strong>Property Detail</strong>
+			</th>
+		</tr>
+	</table>
+
+	
+		
+		<a name="outputDir()"><!-- --></a>
+		<h3>outputDir</h3>
+
+		<kbd>
+			property string
+			<strong>outputDir</strong>
+			
+		</kbd>
+
+		<br><br>
+		
+			<p>The output directory</p>
+		
+
+		<dl>
+		<dt><strong>Attributes:</strong></dt>
+		
+			
+		
+			
+			<dd><code>access</code> - public</dd>
+			
+		
+			
+			<dd><code>required</code> - false</dd>
+			
+		
+			
+		
+			
+			<dd><code>returntype</code> - any</dd>
+			
+		
+			
+		
+			
+		
+			
+			<dd><code>serializable</code> - true</dd>
+			
+		
+		</dl>
+
+		<hr>
+	
+		
+		<a name="projectTitle()"><!-- --></a>
+		<h3>projectTitle</h3>
+
+		<kbd>
+			property string
+			<strong>projectTitle</strong>
+			
+			= [Untitled]
+			
+		</kbd>
+
+		<br><br>
+		
+			<p>The project title to use</p>
+		
+
+		<dl>
+		<dt><strong>Attributes:</strong></dt>
+		
+			
+		
+			
+			<dd><code>access</code> - public</dd>
+			
+		
+			
+			<dd><code>required</code> - false</dd>
+			
+		
+			
+		
+			
+			<dd><code>returntype</code> - any</dd>
+			
+		
+			
+		
+			
+		
+			
+			<dd><code>serializable</code> - true</dd>
+			
+		
+		</dl>
+
+		<hr>
+	
+
+
+
+
+
+
+
+
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<a name="method_detail"><!-- --></a>
+<table class="table table-bordered">
+	<tr class="info">
+		<th colspan="1" align="left">
+			<strong>Method Detail</strong>
+		</th>
+	</tr>
+</table>
+
+
+	
+	<a name="buildClassPages()"><!-- --></a>
+	<h3>
+		buildClassPages
+		
+	</h3>
+
+	<kbd>public <a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a> <strong>buildClassPages</strong>(query qPackage, query qMetadata)</kbd>
+
+	<br><br>
+
+	
+		<p>builds the class pages</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qPackage</code> - the query for a specific package</dd>
+		
+		<dd><code>qMetadata</code> - The metadata</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getOutputDir()"><!-- --></a>
+	<h3>
+		getOutputDir
+		
+	</h3>
+
+	<kbd>public string <strong>getOutputDir</strong>()</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getProjectTitle()"><!-- --></a>
+	<h3>
+		getProjectTitle
+		
+	</h3>
+
+	<kbd>public string <strong>getProjectTitle</strong>()</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="run()"><!-- --></a>
+	<h3>
+		run
+		
+	</h3>
+
+	<kbd>public <a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a> <strong>run</strong>(query qMetadata)</kbd>
+
+	<br><br>
+
+	
+		<p>Run this strategy</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+		<dl>
+			<dt><strong>Overrides:</strong></dt>
+			<dd>
+			<code>
+			<a href="../../../docbox/strategy/AbstractTemplateStrategy.html#run()">run</a></code>
+			in class
+			<code>
+				<a href="../../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a>
+			</code>
+			</dd>
+		</dl>
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qMetadata</code> - The metadata</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="setOutputDir()"><!-- --></a>
+	<h3>
+		setOutputDir
+		
+	</h3>
+
+	<kbd>public any <strong>setOutputDir</strong>(string outputDir)</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>outputDir</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="setProjectTitle()"><!-- --></a>
+	<h3>
+		setProjectTitle
+		
+	</h3>
+
+	<kbd>public any <strong>setProjectTitle</strong>(string projectTitle)</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>projectTitle</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="writeAllClassesFrame()"><!-- --></a>
+	<h3>
+		writeAllClassesFrame
+		
+	</h3>
+
+	<kbd>public <a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a> <strong>writeAllClassesFrame</strong>(query qMetadata)</kbd>
+
+	<br><br>
+
+	
+		<p>writes the allclasses-frame.html</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qMetadata</code> - The metadata</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="writeOverviewSummaryAndFrame()"><!-- --></a>
+	<h3>
+		writeOverviewSummaryAndFrame
+		
+	</h3>
+
+	<kbd>public <a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a> <strong>writeOverviewSummaryAndFrame</strong>(query qMetadata)</kbd>
+
+	<br><br>
+
+	
+		<p>writes the overview-summary.html</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qMetadata</code> - The metadata</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="writePackagePages()"><!-- --></a>
+	<h3>
+		writePackagePages
+		
+	</h3>
+
+	<kbd>public <a href="../../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy.api">HTMLAPIStrategy</a> <strong>writePackagePages</strong>(query qMetadata)</kbd>
+
+	<br><br>
+
+	
+		<p>writes the package summaries</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qMetadata</code> - The metadata</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+
+
+
+</body>
+</html>
+

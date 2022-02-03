@@ -1,0 +1,1976 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>AbstractTemplateStrategy</title>
+	<meta name="keywords" content="docbox.strategy.concurrent.Callable interface">
+	<!-- common assets -->
+	
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel ="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+<link rel ="stylesheet" type="text/css" href="../../stylesheet.css">
+	
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
+	
+<script src="../../bootstrap/js/jquery-2.1.0.min.js" type="text/javascript"></script>
+<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+	// Global Tool Tip Settings
+	$( '[title]' ).tooltip({
+		 animation: 'slide',
+		 delay: { show: 250, hide: 250 }
+	});
+});
+</script>
+	<!-- syntax highlighter -->
+	<link type="text/css" rel="stylesheet" href="../../highlighter/styles/shCoreDefault.css">
+	<script src="../../highlighter/scripts/shCore.js"></script>
+	<script src="../../highlighter/scripts/shBrushColdFusion.js"></script>
+	<script src="../../highlighter/scripts/shBrushXml.js"></script>
+	<script src="../../highlighter/scripts/shBrushSql.js"></script>
+	<script src="../../highlighter/scripts/shBrushJScript.js"></script>
+	<script src="../../highlighter/scripts/shBrushJava.js"></script>
+	<script src="../../highlighter/scripts/shBrushCss.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body class="withNavbar">
+
+
+
+
+
+
+<!-- ========= START OF NAVBAR ======= -->
+<a name="navbar_top"></a>
+<a href="#skip-navbar_top" title="skip navigation links"></a>	
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+    
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#class-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><strong>DocBox v2.2.1</strong></a>
+		</div>
+
+	    <div class="collapse navbar-collapse" id="class-navigation">
+	    	<ul class="nav navbar-nav">
+				
+					
+					<li><a href="../../overview-summary.html"><i class="glyphicon glyphicon-plane"></i> overview</a></li>
+					
+				
+
+				
+					<li><a href="package-summary.html"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;package</a></li>
+				
+
+			  	
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-file"></i> class <b class="caret"></b></a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#class">Class Definition</a></li>
+							<li><a href="#constructor_summary">Constructor Summary</a></li>
+							<li><a href="#constructor_detail">Constructor Detail</a></li>
+							<li><a href="#inherited_methods">Inherited Methods</a></li>
+							<li><a href="#method_summary">Method Summary</a></li>
+							<li><a href="#method_detail">Method Detail</a></li>
+							<li><a href="#property_summary">Property Summary</a></li>
+							<li><a href="#property_detail">Property Detail</a></li>
+							
+						</ul>
+					</li>
+				
+	      	</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="../../index.html?docbox/strategy/AbstractTemplateStrategy.html" target="_top">
+					<i class="glyphicon glyphicon-fullscreen"></i> Frames
+					</a>
+				</li>
+			</ul>
+	    </div>
+
+	</div>
+</nav>	
+
+<a name="skip-navbar_top"></a>
+<!-- ========= END OF NAVBAR ========= -->
+
+<!-- ======== start of class data ======== -->
+<a name="class"><!-- --></a>
+
+<!-- Package -->
+<div class="pull-right">
+	<a href="package-summary.html" title="Package: docbox.strategy"><span class="label label-success">docbox.strategy</span></a>
+</div>
+
+<h2>
+
+Abstract
+
+
+Class
+
+ AbstractTemplateStrategy</h2>
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+	
+		
+		
+			
+		
+	
+	
+
+
+<!-- Inheritance Tree-->
+<pre style="background:white">lucee.Component
+    <img src="../../resources/inherit.gif" alt="extended by ">docbox.strategy.AbstractTemplateStrategy
+</pre>
+
+
+
+	
+	
+
+
+
+<div class="panel panel-default">
+	<div class="panel-heading"><strong>Direct Known Subclasses:</strong></div>
+  	<div class="panel-body">
+	
+		
+		<a href="../../docbox/strategy/api/HTMLAPIStrategy.html" title="class in docbox.strategy">HTMLAPIStrategy</a>
+	
+		,
+		<a href="../../docbox/strategy/uml2tools/XMIStrategy.html" title="class in docbox.strategy">XMIStrategy</a>
+	
+	</div>
+</div>
+
+
+
+
+
+<div id="class-hint">
+	<p>Abstract base class for general templating strategies
+<br>
+<small><em>Copyright 2015 Ortus Solutions, Corp <a href="www.ortussolutions.com">www.ortussolutions.com</a></em></small></p>
+</div>
+
+
+<!-- Clas Attributes -->
+<div class="panel panel-info">
+	<div class="panel-heading"><strong>Class Attributes:</strong></div>
+		<div class="panel-body">
+		
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				doc_abstract
+				
+				: true
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				synchronized
+				
+				: false
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				accessors
+				
+				: true
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+			
+			<li class="label label-danger label-annotations">
+				persistent
+				
+				: false
+				
+			</li>
+			&nbsp;
+			
+		
+			
+		
+			
+		
+		
+	</div>
+</div>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="property_summary"><!-- --></a>
+<table class="table table-bordered table-hover">
+	<tr class="info">
+		<th align="left" colspan="5">
+			<strong>Property Summary</strong>
+		</th>
+	</tr>
+	<tr class="info">
+		<th align="left">
+			<strong>type</strong>
+		</th>
+		<th align="left">
+			<strong>property</strong>
+		</th>
+		<th align="left">
+			<strong>default</strong>
+		</th>
+		<th align="left">
+			<strong>serializable</strong>
+		</th>
+		<th align="left">
+			<strong>required</strong>
+		</th>
+	</tr>
+
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>struct</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#functionQueryCache()">functionQueryCache</A></strong>
+			<br>
+			
+			<!-- only grab the first sentence of the hint -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The function query cache.
+			
+			<br><br>
+			<ul>
+			
+				
+			
+				
+				<li class="label label-default label-annotations">access = public</li>
+				
+			
+				
+			
+				
+			
+				
+				<li class="label label-default label-annotations">returntype = any</li>
+				
+			
+				
+			
+				
+			
+				
+			
+			</ul>
+
+		</td>
+		<td align="right" valign="top" width="1%">
+			
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				true
+			</code>
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>struct</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#propertyQueryCache()">propertyQueryCache</A></strong>
+			<br>
+			
+			<!-- only grab the first sentence of the hint -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The property query cache.
+			
+			<br><br>
+			<ul>
+			
+				
+			
+				
+				<li class="label label-default label-annotations">access = public</li>
+				
+			
+				
+			
+				
+			
+				
+				<li class="label label-default label-annotations">returntype = any</li>
+				
+			
+				
+			
+				
+			
+				
+			
+			</ul>
+
+		</td>
+		<td align="right" valign="top" width="1%">
+			
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				true
+			</code>
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+	</tr>
+	
+	</tr>
+</table>
+
+
+
+	
+	
+	<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+	<a name="constructor_summary"><!-- --></a>
+	<table class="table table-bordered table-hover">
+		<tr class="info">
+			<th align="left" colspan="2">
+				<strong>Constructor Summary</strong>
+			</th>
+		</tr>
+		<tr>
+			
+			<td>
+				<strong><a href="AbstractTemplateStrategy.html#init()">init</A></strong>()
+				<br>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Constructor.
+				
+			</td>
+		</tr>
+	</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="method_summary"><!-- --></a>
+<table class="table table-bordered table-hover">
+	<tr class="info">
+		<th align="left" colspan="2">
+			<strong>Method Summary</strong>
+		</th>
+	</tr>
+
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>query</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#buildFunctionMetaData()">buildFunctionMetaData</A></strong>(struct metadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builds a sorted query of function meta.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>struct</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#buildPackageTree()">buildPackageTree</A></strong>(query qMetadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builds a data structure that shows the tree structure of the packages.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>query</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#buildPropertyMetaData()">buildPropertyMetaData</A></strong>(struct metadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builds a sorted query of property meta.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;boolean</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#classExists()">classExists</A></strong>(query qMetadata, string className, string package)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether or not the CFC class exists (does not test for primitives).
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;<a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#ensureDirectory()">ensureDirectory</A></strong>(string path)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ensure directory.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>string</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#getFunctionQueryCache()">getFunctionQueryCache</A></strong>()
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;array</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#getGenericTypes()">getGenericTypes</A></strong>(struct meta, string package)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return an array of generic types associated with this function/argument.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;query</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#getMetaSubQuery()">getMetaSubQuery</A></strong>(query query, [string where], [string orderBy])
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query of Queries helper.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;string</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#getObjectName()">getObjectName</A></strong>(any class)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the simple object name from a full class name.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;string</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#getPackage()">getPackage</A></strong>(any class)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a package from an incoming class.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;struct</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#getPropertyMeta()">getPropertyMeta</A></strong>(string name, array properties)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the property meta by a given name.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>string</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#getPropertyQueryCache()">getPropertyQueryCache</A></strong>()
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;boolean</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#isAbstractClass()">isAbstractClass</A></strong>(string class, string package)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is this class annotated as an abstract class?.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;boolean</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#isPrimitive()">isPrimitive</A></strong>(string type)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is the type a privite value.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;string</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#resolveClassName()">resolveClassName</A></strong>(string className, string package)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resolves a class name that may not be full qualified.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code><a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#run()">run</A></strong>()
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs the strategy.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;any</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#safeFunctionMeta()">safeFunctionMeta</A></strong>(any func, struct metadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets default values on function metadata.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;struct</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#safeParamMeta()">safeParamMeta</A></strong>(struct param)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets a default meta type if not found.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;any</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#safePropertyMeta()">safePropertyMeta</A></strong>(any property, struct metadata)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets default values on property metadata.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#setFunctionQueryCache()">setFunctionQueryCache</A></strong>(struct functionQueryCache)
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#setPropertyQueryCache()">setPropertyQueryCache</A></strong>(struct propertyQueryCache)
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;boolean</code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#typeExists()">typeExists</A></strong>(query qMetadata, string className, string package)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether a type exists at all - be it class name, or primitive type.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;<a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#visitPackageTree()">visitPackageTree</A></strong>(struct packageTree, any startCommand, any endCommand, [struct args='[runtime expression]'])
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visit each element on the package tree.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;<a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a></code>
+		</td>
+		<td>
+			<strong><a href="AbstractTemplateStrategy.html#writeTemplate()">writeTemplate</A></strong>(string path, string template)
+			<br>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Builds a template.
+			
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<a name="inherited_methods"><!-- --></a>
+
+
+	
+
+	
+
+	&nbsp;
+	<a name="methods_inherited_from_class_lucee.Component"><!-- --></a>
+	<table class="table table-hover table-bordered">
+		<tr class="info">
+			<th align="left">
+				<strong>Methods inherited from class <kbd>lucee.Component</kbd></strong>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				
+				
+				
+
+				
+					<span class="label label-warning"><em>None</em></span>
+				
+			</td>
+		</tr>
+	</table>
+
+
+<hr>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+	<a name="constructor_detail"><!-- --></a>
+	<table class="table table-bordered">
+		<tr class="info">
+			<th colspan="1" align="left">
+				<strong>Constructor Detail</strong>
+			</th>
+		</tr>
+	</table>
+
+	<a name="init()"><!-- --></a><h3>
+	init</h3>
+	<kbd>public <strong>init</strong>()</kbd>
+
+	<br><br>
+
+	
+	<p>Constructor</p>
+	
+
+	
+	<hr>
+
+
+<!-- ============ PROPERTY DETAIL ========== -->
+
+	<a name="property_detail"><!-- --></a>
+	<table class="table table-bordered">
+		<tr class="info">
+			<th colspan="1" align="left">
+				<strong>Property Detail</strong>
+			</th>
+		</tr>
+	</table>
+
+	
+		
+		<a name="functionQueryCache()"><!-- --></a>
+		<h3>functionQueryCache</h3>
+
+		<kbd>
+			property struct
+			<strong>functionQueryCache</strong>
+			
+		</kbd>
+
+		<br><br>
+		
+			<p>The function query cache</p>
+		
+
+		<dl>
+		<dt><strong>Attributes:</strong></dt>
+		
+			
+		
+			
+			<dd><code>access</code> - public</dd>
+			
+		
+			
+			<dd><code>required</code> - false</dd>
+			
+		
+			
+		
+			
+			<dd><code>returntype</code> - any</dd>
+			
+		
+			
+		
+			
+		
+			
+			<dd><code>serializable</code> - true</dd>
+			
+		
+		</dl>
+
+		<hr>
+	
+		
+		<a name="propertyQueryCache()"><!-- --></a>
+		<h3>propertyQueryCache</h3>
+
+		<kbd>
+			property struct
+			<strong>propertyQueryCache</strong>
+			
+		</kbd>
+
+		<br><br>
+		
+			<p>The property query cache</p>
+		
+
+		<dl>
+		<dt><strong>Attributes:</strong></dt>
+		
+			
+		
+			
+			<dd><code>access</code> - public</dd>
+			
+		
+			
+			<dd><code>required</code> - false</dd>
+			
+		
+			
+		
+			
+			<dd><code>returntype</code> - any</dd>
+			
+		
+			
+		
+			
+		
+			
+			<dd><code>serializable</code> - true</dd>
+			
+		
+		</dl>
+
+		<hr>
+	
+
+
+
+
+
+
+
+
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<a name="method_detail"><!-- --></a>
+<table class="table table-bordered">
+	<tr class="info">
+		<th colspan="1" align="left">
+			<strong>Method Detail</strong>
+		</th>
+	</tr>
+</table>
+
+
+	
+	<a name="buildFunctionMetaData()"><!-- --></a>
+	<h3>
+		buildFunctionMetaData
+		
+	</h3>
+
+	<kbd>public query <strong>buildFunctionMetaData</strong>(struct metadata)</kbd>
+
+	<br><br>
+
+	
+		<p>builds a sorted query of function meta</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>metadata</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="buildPackageTree()"><!-- --></a>
+	<h3>
+		buildPackageTree
+		
+	</h3>
+
+	<kbd>public struct <strong>buildPackageTree</strong>(query qMetadata)</kbd>
+
+	<br><br>
+
+	
+		<p>builds a data structure that shows the tree structure of the packages</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qMetadata</code></dd>
+		
+		</dl>
+	
+
+	
+		<dl>
+			<dt><strong>Returns:</strong></dt>
+			<dd>string,struct</dd>
+		</dl>
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="buildPropertyMetaData()"><!-- --></a>
+	<h3>
+		buildPropertyMetaData
+		
+	</h3>
+
+	<kbd>public query <strong>buildPropertyMetaData</strong>(struct metadata)</kbd>
+
+	<br><br>
+
+	
+		<p>builds a sorted query of property meta</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>metadata</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="classExists()"><!-- --></a>
+	<h3>
+		classExists
+		
+	</h3>
+
+	<kbd>private boolean <strong>classExists</strong>(query qMetadata, string className, string package)</kbd>
+
+	<br><br>
+
+	
+		<p>Whether or not the CFC class exists (does not test for primitives)</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qMetadata</code> - The metadata query</dd>
+		
+		<dd><code>className</code> - The name of the class</dd>
+		
+		<dd><code>package</code> - The package the class comes from</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="ensureDirectory()"><!-- --></a>
+	<h3>
+		ensureDirectory
+		
+	</h3>
+
+	<kbd>private <a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a> <strong>ensureDirectory</strong>(string path)</kbd>
+
+	<br><br>
+
+	
+		<p>Ensure directory</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>path</code> - The target path</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getFunctionQueryCache()"><!-- --></a>
+	<h3>
+		getFunctionQueryCache
+		
+	</h3>
+
+	<kbd>public string <strong>getFunctionQueryCache</strong>()</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getGenericTypes()"><!-- --></a>
+	<h3>
+		getGenericTypes
+		
+	</h3>
+
+	<kbd>private array <strong>getGenericTypes</strong>(struct meta, string package)</kbd>
+
+	<br><br>
+
+	
+		<p>return an array of generic types associated with this function/argument</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>meta</code> - Either function, or argument metadata</dd>
+		
+		<dd><code>package</code> - The package we are currently in</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getMetaSubQuery()"><!-- --></a>
+	<h3>
+		getMetaSubQuery
+		
+	</h3>
+
+	<kbd>private query <strong>getMetaSubQuery</strong>(query query, [string where], [string orderBy])</kbd>
+
+	<br><br>
+
+	
+		<p>Query of Queries helper</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>query</code> - The metadata query</dd>
+		
+		<dd><code>where</code> - The where string</dd>
+		
+		<dd><code>orderBy</code> - The order by string</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getObjectName()"><!-- --></a>
+	<h3>
+		getObjectName
+		
+	</h3>
+
+	<kbd>private string <strong>getObjectName</strong>(any class)</kbd>
+
+	<br><br>
+
+	
+		<p>Returns the simple object name from a full class name</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>class</code> - The name of the class</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getPackage()"><!-- --></a>
+	<h3>
+		getPackage
+		
+	</h3>
+
+	<kbd>private string <strong>getPackage</strong>(any class)</kbd>
+
+	<br><br>
+
+	
+		<p>Get a package from an incoming class</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>class</code> - The name of the class</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getPropertyMeta()"><!-- --></a>
+	<h3>
+		getPropertyMeta
+		
+	</h3>
+
+	<kbd>private struct <strong>getPropertyMeta</strong>(string name, array properties)</kbd>
+
+	<br><br>
+
+	
+		<p>returns the property meta by a given name</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>name</code> - The name of the property</dd>
+		
+		<dd><code>properties</code> - The property meta</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getPropertyQueryCache()"><!-- --></a>
+	<h3>
+		getPropertyQueryCache
+		
+	</h3>
+
+	<kbd>public string <strong>getPropertyQueryCache</strong>()</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="isAbstractClass()"><!-- --></a>
+	<h3>
+		isAbstractClass
+		
+	</h3>
+
+	<kbd>private boolean <strong>isAbstractClass</strong>(string class, string package)</kbd>
+
+	<br><br>
+
+	
+		<p>is this class annotated as an abstract class?</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>class</code> - The class name</dd>
+		
+		<dd><code>package</code> - The package we are currently in</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="isPrimitive()"><!-- --></a>
+	<h3>
+		isPrimitive
+		
+	</h3>
+
+	<kbd>private boolean <strong>isPrimitive</strong>(string type)</kbd>
+
+	<br><br>
+
+	
+		<p>Is the type a privite value</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>type</code> - The cf type</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="resolveClassName()"><!-- --></a>
+	<h3>
+		resolveClassName
+		
+	</h3>
+
+	<kbd>private string <strong>resolveClassName</strong>(string className, string package)</kbd>
+
+	<br><br>
+
+	
+		<p>Resolves a class name that may not be full qualified</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>className</code> - The name of the class</dd>
+		
+		<dd><code>package</code> - The package the class comes from</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="run()"><!-- --></a>
+	<h3>
+		run
+		
+	</h3>
+
+	<kbd>public <a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a> <strong>run</strong>()</kbd>
+
+	<br><br>
+
+	
+		<p>Runs the strategy</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="safeFunctionMeta()"><!-- --></a>
+	<h3>
+		safeFunctionMeta
+		
+	</h3>
+
+	<kbd>private any <strong>safeFunctionMeta</strong>(any func, struct metadata)</kbd>
+
+	<br><br>
+
+	
+		<p>Sets default values on function metadata</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>func</code> - The function metadata</dd>
+		
+		<dd><code>metadata</code> - The original metadata</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="safeParamMeta()"><!-- --></a>
+	<h3>
+		safeParamMeta
+		
+	</h3>
+
+	<kbd>private struct <strong>safeParamMeta</strong>(struct param)</kbd>
+
+	<br><br>
+
+	
+		<p>Sets a default meta type if not found</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>param</code> - The struct meta</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="safePropertyMeta()"><!-- --></a>
+	<h3>
+		safePropertyMeta
+		
+	</h3>
+
+	<kbd>private any <strong>safePropertyMeta</strong>(any property, struct metadata)</kbd>
+
+	<br><br>
+
+	
+		<p>Sets default values on property metadata</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>property</code> - The property metadata</dd>
+		
+		<dd><code>metadata</code> - The original metadata</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="setFunctionQueryCache()"><!-- --></a>
+	<h3>
+		setFunctionQueryCache
+		
+	</h3>
+
+	<kbd>public any <strong>setFunctionQueryCache</strong>(struct functionQueryCache)</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>functionQueryCache</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="setPropertyQueryCache()"><!-- --></a>
+	<h3>
+		setPropertyQueryCache
+		
+	</h3>
+
+	<kbd>public any <strong>setPropertyQueryCache</strong>(struct propertyQueryCache)</kbd>
+
+	<br><br>
+
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>propertyQueryCache</code></dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="typeExists()"><!-- --></a>
+	<h3>
+		typeExists
+		
+	</h3>
+
+	<kbd>private boolean <strong>typeExists</strong>(query qMetadata, string className, string package)</kbd>
+
+	<br><br>
+
+	
+		<p>Whether a type exists at all - be it class name, or primitive type</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>qMetadata</code> - The metadata query</dd>
+		
+		<dd><code>className</code> - The name of the class</dd>
+		
+		<dd><code>package</code> - The package the class comes from</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="visitPackageTree()"><!-- --></a>
+	<h3>
+		visitPackageTree
+		
+	</h3>
+
+	<kbd>private <a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a> <strong>visitPackageTree</strong>(struct packageTree, any startCommand, any endCommand, [struct args='[runtime expression]'])</kbd>
+
+	<br><br>
+
+	
+		<p>visit each element on the package tree</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>packageTree</code> - The package tree</dd>
+		
+		<dd><code>startCommand</code> - the command to call on each visit</dd>
+		
+		<dd><code>endCommand</code> - the command to call on each visit</dd>
+		
+		<dd><code>args</code> - the extra arguments to get passed on to the visitor command (name, and fullname get passed by default)</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="writeTemplate()"><!-- --></a>
+	<h3>
+		writeTemplate
+		
+	</h3>
+
+	<kbd>private <a href="../../docbox/strategy/AbstractTemplateStrategy.html" title="class in docbox.strategy">AbstractTemplateStrategy</a> <strong>writeTemplate</strong>(string path, string template)</kbd>
+
+	<br><br>
+
+	
+		<p>Builds a template</p>
+	
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>path</code> - Where to write the template</dd>
+		
+		<dd><code>template</code> - The template to write out</dd>
+		
+		</dl>
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+
+
+
+</body>
+</html>
+
