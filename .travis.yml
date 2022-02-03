@@ -8,10 +8,9 @@ env:
   global:
     - MODULE_ID=twilio-sdk
   matrix:
+    - ENGINE=adobe@2018
     - ENGINE=adobe@2016
-    - ENGINE=adobe@11
     - ENGINE=lucee@5
-    - ENGINE=lucee@4.5
 
 branches:
   only:
@@ -69,7 +68,7 @@ deploy:
       branch:
         - master
         - development
-      condition: "$ENGINE = lucee@4.5"
+      condition: "$ENGINE = lucee@5"
     skip_cleanup: true
     #AWS Credentials need to be set in Travis
     access_key_id: $AWS_ACCESS_KEY
@@ -84,7 +83,7 @@ deploy:
       branch:
         - master
         - development
-      condition: "$ENGINE = lucee@4.5"
+      condition: "$ENGINE = lucee@5"
     skip_cleanup: true
     #AWS Credentials need to be set in Travis
     access_key_id: $AWS_ACCESS_KEY

@@ -18,7 +18,7 @@ component extends="tests.resources.ModuleIntegrationSpec" appMapping="/app" {
                     )
                     .send();
 
-                expect( res.getStatusCode() ).toBe( 200, "Response should be a 201 Created" );
+                expect( res.getStatusCode() ).toBe( 200, "Response should be a 200 OK" );
                 expect( res.json().national_format ).toBe( "(415) 701-2311" );
             } );
 

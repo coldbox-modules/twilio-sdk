@@ -35,7 +35,7 @@ component{
 			//Error/Exception Handling
 			exceptionHandler		= "",
 			onInvalidEvent			= "",
-			customErrorTemplate		= "/coldbox/system/includes/BugReport.cfm",
+			customErrorTemplate		= "/coldbox/system/exceptions/BugReport.cfm",
 
 			//Application Aspects
 			handlerCaching 			= false,
@@ -55,7 +55,7 @@ component{
         };
 
 		// Activate WireBox
-		wirebox = { enabled = true, singletonReload=false };
+		wirebox = { enabled = true, singletonReload = false };
 
 		// Module Directives
 		modules = {
@@ -80,21 +80,18 @@ component{
 		};
 
 		//Register interceptors as an array, we need order
-		interceptors = [
-			//SES
-			{ class="coldbox.system.interceptors.SES" }
-		];
+		interceptors = [];
     }
 
     function getSystemSetting( name, defaultValue ) {
-        var system = createObject( "java", "java.lang.System" );
+        param variables.javaSystem = createObject( "java", "java.lang.System" );
 
-        var envValue = system.getEnv( name );
+        var envValue = variables.javaSystem.getEnv( name );
         if ( ! isNull( envValue ) ) {
             return envValue;
         }
 
-        var propValue = system.getProperty( name );
+        var propValue = variables.javaSystem.getProperty( name );
         if ( ! isNull( propValue ) ) {
             return propValue;
         }

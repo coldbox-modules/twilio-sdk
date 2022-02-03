@@ -3,21 +3,18 @@
     "version":"1.3.0",
     "slug":"twilio-sdk-shell",
     "private":false,
-    "dependencies":{
-        "coldbox":"^4.3.0",
-        "workbench":"git+https://github.com/Ortus-Solutions/unified-workbench.git",
-        "hyper":"^1.4.1",
-        "docbox":"^2.0.7+00005"
-    },
+    "dependencies":{},
     "devDependencies":{
-        "testbox":"^2.5.0"
+        "coldbox":"^6.0.0",
+        "testbox":"^4.0.0",
+        "workbench":"git+https://github.com/Ortus-Solutions/unified-workbench.git",
+        "docbox":"^3.0.0"
     },
     "installPaths":{
-        "coldbox":"coldbox",
+        "coldbox":"coldbox/",
         "testbox":"testbox/",
-        "workbench":"workbench",
-        "hyper":"modules/hyper/",
-        "docbox":"docbox"
+        "workbench":"workbench/",
+        "docbox":"docbox/"
     },
     "testbox":{
         "runner":"http://localhost:49616"
