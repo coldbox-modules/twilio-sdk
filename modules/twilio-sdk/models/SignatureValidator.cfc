@@ -4,7 +4,7 @@ component accessors="true" {
      * The configured account auth token.
      * This can be overridden for subaccounts.
      */
-    property name="authToken" inject="coldbox:setting:authToken@twilio-sdk";
+    property name="authToken" inject="box:setting:authToken@twilio-sdk";
 
     /**
      * Validate a request against an expected signature.

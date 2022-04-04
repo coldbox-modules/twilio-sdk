@@ -7,7 +7,7 @@ component singleton accessors="true" {
      * The configured account SID.
      * This can be overridden for subaccounts.
      */
-    property name="accountSID" inject="coldbox:setting:accountSID@twilio-sdk";
+    property name="accountSID" inject="box:setting:accountSID@twilio-sdk";
 
     /**
      * A configured HyperBuilder client to use with the Twilio API.
