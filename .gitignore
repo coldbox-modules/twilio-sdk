@@ -19,4 +19,4 @@ artifacts/*
 apidocs/twilio-sdk-apidocs/*
 workbench/*
 build/*
-modules/hyper
+modules/twilio-sdk/modules/hyper
