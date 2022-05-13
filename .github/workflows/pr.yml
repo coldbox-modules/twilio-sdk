@@ -15,5 +15,7 @@ jobs:
     uses: ./.github/workflows/tests.yml
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+      TWILIO_AUTHTOKEN: ${{ secrets.TWILIO_AUTHTOKEN }}
       TWILIO_TEST_ACCOUNT_SID: ${{ secrets.TWILIO_TEST_ACCOUNT_SID }}
       TWILIO_TEST_AUTHTOKEN: ${{ secrets.TWILIO_TEST_AUTHTOKEN }}

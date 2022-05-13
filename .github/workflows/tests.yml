@@ -6,6 +6,10 @@ on:
     secrets:
       SLACK_WEBHOOK_URL:
         required: true
+      TWILIO_ACCOUNT_SID:
+        required: true
+      TWILIO_AUTHTOKEN:
+        required: true
       TWILIO_TEST_ACCOUNT_SID:
         required: true
       TWILIO_TEST_AUTHTOKEN:

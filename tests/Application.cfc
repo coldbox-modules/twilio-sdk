@@ -24,43 +24,7 @@ component{
 
 	// request start
 	public boolean function onRequestStart( String targetPage ){
-		getJavaSystem().setProperty( "TWILIO_ACCOUNT_SID", getSystemSetting( "TWILIO_TEST_ACCOUNT_SID" ) );
-		getJavaSystem().setProperty( "TWILIO_AUTHTOKEN", getSystemSetting( "TWILIO_TEST_AUTHTOKEN" ) );
 		return true;
-	}
-
-	/**
-	 * Retrieve a Java System property or env value by name. It looks at properties first then environment variables
-	 *
-	 * @key          The name of the setting to look up.
-	 * @defaultValue The default value to use if the key does not exist in the system properties or the env
-	 *
-	 * @throws SystemSettingNotFound When the java system property or env is not found
-	 */
-	function getSystemSetting( required key, defaultValue ){
-		var value = getJavaSystem().getProperty( arguments.key );
-		if ( !isNull( local.value ) ) {
-			return value;
-		}
-
-		value = getJavaSystem().getEnv( arguments.key );
-		if ( !isNull( local.value ) ) {
-			return value;
-		}
-
-		if ( !isNull( arguments.defaultValue ) ) {
-			return arguments.defaultValue;
-		}
-
-		throw(
-			type   : "SystemSettingNotFound",
-			message: "Could not find a Java System property or Env setting with key [#arguments.key#]."
-		);
-	}
-
-	function getJavaSystem() {
-		param variables.javaSystem = createObject( "java", "java.lang.System" );
-		return variables.javaSystem;
 	}
 
 }

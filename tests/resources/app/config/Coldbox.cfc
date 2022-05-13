@@ -137,7 +137,12 @@ component {
 		 *
 		 * }
 		 */
-		moduleSettings = {};
+		moduleSettings = {
+			"twilio-sdk": {
+				accountSID = getSystemSetting( "TWILIO_TEST_ACCOUNT_SID" ),
+				authToken = getSystemSetting( "TWILIO_TEST_AUTHTOKEN" )
+			}
+		};
 
 		/**
 		 * --------------------------------------------------------------------------
