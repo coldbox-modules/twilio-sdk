@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/coldbox-modules/cbox-validation.svg?branch=development)](https://travis-ci.org/coldbox-modules/cbox-validation)
-
 # WELCOME TO THE COLDBOX TWILIO SDK
 
 This module is a CFML SDK to interact with the Twilio API
@@ -10,13 +8,13 @@ Apache License, Version 2.0.
 
 ## IMPORTANT LINKS
 
-*   https://github.com/coldbox-modules/twilio-sdk
-*   https://forgebox.io/view/twilio-sdk
+* https://github.com/coldbox-modules/twilio-sdk
+* https://forgebox.io/view/twilio-sdk
 
 ## SYSTEM REQUIREMENTS
 
-*   Lucee 4.5+
-*   Adobe ColdFusion 11+
+* Lucee 4.5+
+* Adobe ColdFusion 11+
 
 ## Setup
 
@@ -31,21 +29,7 @@ moduleSettings = {
 };
 ```
 
-Then you can inject it into your handlers or models using the following injection DSL:
-
-```cfc
-property name="TwilioClient" inject="TwilioClient@twilio-sdk";
-```
-
-And send a text message like this:
-
-```cfc
-var req = twilioClient
-  .sms( from = "+15005550006", to = "+18015550005", body = "Testing 123" )
-  .send();
-```
-
-## `TwilioClient`
+## Methods
 
 #### lookup
 
@@ -108,21 +92,6 @@ binder.map( "TwilioHyperClient@twilio-sdk" )
 ```
 
 Because of Hyper, you don't have to specify those parameters every request. 👍
-
-## `SignatureValidator`
-
-The `SignatureValidator` helps you ensure that a request came from Twilio. You can read more about how Twilio
-signs your requests [here](https://www.twilio.com/docs/api/security#validating-requests).
-
-### validate
-
-Validates an incoming signature is authentic.
-
-| Name              | Type   | Required? | Default | Description                                                                           |
-| ----------------- | ------ | --------- | ------- | ------------------------------------------------------------------------------------- |
-| expectedSignature | String | `true`    |         | The expected signature for the request. Usually from the `X-Twilio-Signature` header. |
-| uri               | String | `true`    |         | The full url of the request.                                                          |
-| params            | Struct | `false`   | `{}`    | Any form parameters. Usually just the `form` scope.                                   |
 
 ### Non-ColdBox App
 

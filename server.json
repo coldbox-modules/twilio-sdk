@@ -1,12 +1,10 @@
 {
-    "force":true,
-    "openbrowser":"false",
     "web":{
         "http":{
-            "port":"49616"
+            "port":"49619"
         }
     },
     "app":{
-        "cfengine":"adobe@2016"
+        "cfengine":"lucee@5"
     }
 }

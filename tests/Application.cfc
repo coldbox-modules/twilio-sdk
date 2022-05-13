@@ -11,18 +11,20 @@ component{
 	this.whiteSpaceManagement = "smart";
 
 	// any mappings go here, we create one that points to the root called test.
-	this.mappings[ "/tests" ] = getDirectoryFromPath( getCurrentTemplatePath() );
+	testsPath = getDirectoryFromPath( getCurrentTemplatePath() );
+	this.mappings[ "/tests" ] = testsPath;
 	rootPath = REReplaceNoCase( this.mappings[ "/tests" ], "tests(\\|/)", "" );
     this.mappings[ "/root" ]   = rootPath;
-    this.mappings[ "/app" ] = rootPath;
-    this.mappings[ "/coldbox" ] = rootPath & "coldbox";
+	this.mappings[ "/twilio-sdk" ]   = rootPath;
 	this.mappings[ "/hyper" ]   = rootPath & "modules/hyper";
-	this.mappings[ "/twilio-sdk" ]   = rootPath & "modules/twilio-sdk";
-
-	// any orm definitions go here.
+	this.mappings[ "/testingModuleRoot" ] = listDeleteAt( rootPath, listLen( rootPath, '\/' ), "\/" );
+    this.mappings[ "/app" ] = testsPath & "resources/app";
+    this.mappings[ "/coldbox" ] = testsPath & "resources/app/coldbox";
+    this.mappings[ "/testbox" ] = rootPath & "testbox";
 
 	// request start
 	public boolean function onRequestStart( String targetPage ){
 		return true;
 	}
+
 }
