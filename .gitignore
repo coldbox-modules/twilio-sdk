@@ -1,6 +1,6 @@
 /testbox
 /tests/results
 /tests/resources/app/coldbox
-/tests/resources/sample-files/sample.yml
 /node_modules
 /modules
+.env
