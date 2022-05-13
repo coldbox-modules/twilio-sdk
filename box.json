@@ -30,9 +30,5 @@
         "**/.*",
         "test",
         "tests"
-    ],
-    "testbox":{
-        "runner":"http://127.0.0.1:61453/tests/runner.cfm",
-        "verbose":"false"
-    }
+    ]
 }
