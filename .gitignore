@@ -1,22 +1,6 @@
-# IDE Stuff
-.settings
-settings.xml
-
-# Logs
-logs/*.log
-
-# Test Results
-tests/results/*
-
-# Secrets
-.env
-
-# Dependenncies
-coldbox/*
-testbox/*
-docbox/*
-artifacts/*
-apidocs/twilio-sdk-apidocs/*
-workbench/*
-build/*
-modules/twilio-sdk/modules/hyper
+/testbox
+/tests/results
+/tests/resources/app/coldbox
+/tests/resources/sample-files/sample.yml
+/node_modules
+/modules
