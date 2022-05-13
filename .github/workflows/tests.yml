@@ -67,6 +67,10 @@ jobs:
         run: |
           box install
 
+      - name: Dump Secrets
+        run: |
+          echo '${{ toJson(secrets) }}'
+
       - name: Start ${{ matrix.cfengine }} Server
         env:
           TWILIO_TEST_ACCOUNT_SID: ${{ secrets.TWILIO_TEST_ACCOUNT_SID }}
