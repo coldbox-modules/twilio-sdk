@@ -62,21 +62,25 @@ jobs:
           key: ${{ runner.OS }}-commandbox-cache-${{ hashFiles( 'box.json' ) }}-${{ hashFiles( 'box.json' ) }}
           restore-keys: |
             ${{ runner.OS }}-commandbox-cache-${{ hashFiles( 'box.json' ) }}-${{ hashFiles( 'box.json' ) }}
+
       - name: Install Test Harness Dependencies
         run: |
           box install
+
       - name: Start ${{ matrix.cfengine }} Server
         run: |
-          box server start cfengine=${{ matrix.cfengine }} --noSaveSettings --debug
+          box server start cfengine=${{ matrix.cfengine }} port=49619 --noSaveSettings --debug
           # Install Adobe 2021 cfpm modules
           if [[ "${{ matrix.cfengine }}" == "adobe@2021" ]] ; then
             box run-script install:2021
           fi
-          curl http://127.0.0.1:60299
+          curl http://127.0.0.1:49619
+
       - name: Run Tests
         run: |
           mkdir -p tests/results
           box testbox run --verbose outputFile=tests/results/test-results outputFormats=json,antjunit
+
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
@@ -91,10 +95,12 @@ jobs:
           name: test-results-${{ matrix.cfengine }}
           path: |
             tests/results/**/*
+
       - name: Show Server Log On Failures
         if: ${{ failure() }}
         run: |
-          box server log serverConfigFile="server-${{ matrix.cfengine }}.json"
+          box server log
+
       - name: Upload Debug Logs To Artifacts
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
@@ -103,6 +109,7 @@ jobs:
           path: |
             .engine/**/logs/*
             .engine/**/WEB-INF/cfusion/logs/*
+
       - name: Slack Notifications
         # Only on failures and NOT in pull requests
         if: ${{ failure() && !startsWith( 'pull_request', github.event_name ) }}
