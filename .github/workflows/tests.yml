@@ -72,6 +72,7 @@ jobs:
           TWILIO_TEST_ACCOUNT_SID: ${{ secrets.TWILIO_TEST_ACCOUNT_SID }}
           TWILIO_TEST_AUTHTOKEN: ${{ secrets.TWILIO_TEST_AUTHTOKEN }}
         run: |
+          echo '${{ secrets.TWILIO_TEST_ACCOUNT_SID }}'
           printenv
           box server start cfengine=${{ matrix.cfengine }} port=49619 --noSaveSettings --debug
           # Install Adobe 2021 cfpm modules
