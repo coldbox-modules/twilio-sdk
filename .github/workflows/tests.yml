@@ -68,6 +68,9 @@ jobs:
           box install
 
       - name: Start ${{ matrix.cfengine }} Server
+        env:
+          TWILIO_TEST_ACCOUNT_SID: ${{ secrets.TWILIO_TEST_ACCOUNT_SID }}
+          TWILIO_TEST_AUTHTOKEN: ${{ secrets.TWILIO_TEST_AUTHTOKEN }}
         run: |
           box server start cfengine=${{ matrix.cfengine }} port=49619 --noSaveSettings --debug
           # Install Adobe 2021 cfpm modules
@@ -77,6 +80,9 @@ jobs:
           curl http://127.0.0.1:49619
 
       - name: Run Tests
+        env:
+          TWILIO_TEST_ACCOUNT_SID: ${{ secrets.TWILIO_TEST_ACCOUNT_SID }}
+          TWILIO_TEST_AUTHTOKEN: ${{ secrets.TWILIO_TEST_AUTHTOKEN }}
         run: |
           mkdir -p tests/results
           box testbox run --verbose outputFile=tests/results/test-results outputFormats=json,antjunit
