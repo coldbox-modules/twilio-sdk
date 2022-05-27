@@ -70,26 +70,31 @@ component singleton accessors="true" {
     /**
      * Initiate a phone call
      *
-     * @to     The phone number the call is going to.
-     * @from   The phone number the call is from.
-     *         This must be a valid Twilio number.
-     * @twiml  The twiml XML instructions for the call.
+     * @to                The phone number the call is going to.
+     * @from              The phone number the call is from.
+     *                    This must be a valid Twilio number.
+     * @twiml             The twiml XML instructions for the call.
+     * @additionalParams  Any additional param to send with the request
      *
-     * @returns A configured HyperRequest instance.
+     * @returns           A configured HyperRequest instance.
      */
     function call(
         required string to,
         required string from,
-        required string twiml
+        required string twiml,
+        struct additionalParams = {}
     ) {
+        var body = {
+            "From"  = arguments.from,
+            "To"    = arguments.to,
+            "Twiml" = arguments.twiml
+        };
+        structAppend( body, additionalParams );
+
         return newRequest()
             .setMethod( "POST" )
             .setUrl( "/Accounts/#variables.accountSID#/Calls.json" )
-            .setBody( {
-                "From"  = arguments.from,
-                "To"    = arguments.to,
-                "Twiml" = arguments.twiml
-            } );
+            .setBody( body );
     }
 
     function newRequest() {
