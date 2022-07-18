@@ -3,45 +3,45 @@
  */
 component singleton accessors="true" {
 
-	/**
-	 * The configured account SID.
-	 * This can be overridden for subaccounts.
-	 */
-	property name="accountSID" inject="box:setting:accountSID@twilio-sdk";
+    /**
+     * The configured account SID.
+     * This can be overridden for subaccounts.
+     */
+    property name="accountSID" inject="box:setting:accountSID@twilio-sdk";
 
-	/**
-	 * A configured HyperBuilder client to use with the Twilio API.
-	 * This is handled for you when using as a ColdBox module.
-	 */
-	property name="hyperClient" inject="TwilioHyperClient@twilio-sdk";
+    /**
+     * A configured HyperBuilder client to use with the Twilio API.
+     * This is handled for you when using as a ColdBox module.
+     */
+    property name="hyperClient" inject="TwilioHyperClient@twilio-sdk";
 
-	/**
-	 * Look up information about a phone number.
-	 *
+    /**
+     * Look up information about a phone number.
+     *
 	 * @phoneNumber    The phone number to look up.
-	 * @withCallerName Should caller information be included in the response.
+     * @withCallerName Should caller information be included in the response.
 	 *                 (This costs extra.) [Deprecated in favor of @type] Default: false.
 	 * @types          An optional array of types of information to be
 	 *                 included in the response. Options include 'carrier'
 	 *                 and 'caller-name'. (This costs extra.)
-	 * @addons         An optional array of addons to process and include
-	 *                 in the response. (This may cost extra.)
-	 *
-	 * @returns        A configured HyperRequest instance.
-	 */
-	function lookup(
-		phoneNumber,
-		withCallerName = false,
+     * @addons         An optional array of addons to process and include
+     *                 in the response. (This may cost extra.)
+     *
+     * @returns        A configured HyperRequest instance.
+     */
+    function lookup(
+        phoneNumber,
+        withCallerName = false,
 		types = [],
-		addons = []
-	) {
-		var req = newRequest()
-			.setBaseUrl( "https://lookups.twilio.com" )
+        addons = []
+    ) {
+        var req = newRequest()
+            .setBaseUrl( "https://lookups.twilio.com" )
 			.setUrl( "/v1/PhoneNumbers/#trim( arguments.phoneNumber )#" );
 
 		if ( arguments.withCallerName ) {
 			req.withQueryParams( { "Type": "caller-name" } );
-		}
+        }
 
 		for ( var type in arguments.types ) {
 			req.withQueryParams( { "Type": type } );
@@ -49,60 +49,68 @@ component singleton accessors="true" {
 
 		for ( var addon in arguments.addons ) {
 			req.withQueryParams( { "AddOns": addon } );
-		}
+        }
 
-		return req;
-	}
+        return req;
+    }
 
-	/**
-	 * Send an sms message.
-	 *
-	 * @to     The phone number the sms is going to.
-	 * @from   The phone number the sms is from.
-	 *         This must be a valid Twilio number.
-	 * @body   The body of the sms message.
-	 *
-	 * @returns A configured HyperRequest instance.
-	 */
-	function sms( to, from, body ) {
-		return newRequest()
-			.setMethod( "POST" )
-			.setUrl( "/Accounts/#accountSID#/Messages.json" )
-			.setBody( { "From": arguments.from, "To": arguments.to, "Body": arguments.body } );
-	}
+    /**
+     * Send an sms message.
+     *
+     * @to     The phone number the sms is going to.
+     * @from   The phone number the sms is from.
+     *         This must be a valid Twilio number.
+     * @body   The body of the sms message.
+     *
+     * @returns A configured HyperRequest instance.
+     */
+    function sms( to, from, body ) {
+        return newRequest()
+            .setMethod( "POST" )
+            .setUrl( "/Accounts/#accountSID#/Messages.json" )
+            .setBody( {
+                "From" = arguments.from,
+                "To"   = arguments.to,
+                "Body" = arguments.body
+            } );
+    }
 
-	/**
-	 * Initiate a phone call
-	 *
-	 * @to                The phone number the call is going to.
-	 * @from              The phone number the call is from.
-	 *                    This must be a valid Twilio number.
-	 * @twiml             The twiml XML instructions for the call.
-	 * @additionalParams  Any additional param to send with the request
-	 *
-	 * @returns           A configured HyperRequest instance.
-	 */
-	function call(
-		required string to,
-		required string from,
-		required string twiml,
-		struct additionalParams = {}
-	) {
-		var body = { "From": arguments.from, "To": arguments.to, "Twiml": arguments.twiml };
-		structAppend( body, additionalParams );
+    /**
+     * Initiate a phone call
+     *
+     * @to                The phone number the call is going to.
+     * @from              The phone number the call is from.
+     *                    This must be a valid Twilio number.
+     * @twiml             The twiml XML instructions for the call.
+     * @additionalParams  Any additional param to send with the request
+     *
+     * @returns           A configured HyperRequest instance.
+     */
+    function call(
+        required string to,
+        required string from,
+        required string twiml,
+        struct additionalParams = {}
+    ) {
+        var body = {
+            "From"  = arguments.from,
+            "To"    = arguments.to,
+            "Twiml" = arguments.twiml
+        };
+        structAppend( body, additionalParams );
 
-		return newRequest()
-			.setMethod( "POST" )
-			.setUrl( "/Accounts/#variables.accountSID#/Calls.json" )
-			.setBody( body );
-	}
+        return newRequest()
+            .setMethod( "POST" )
+            .setUrl( "/Accounts/#variables.accountSID#/Calls.json" )
+            .setBody( body );
+    }
 
-	function newRequest() {
-		return hyperClient.new();
-	}
+    function newRequest() {
+        return hyperClient.new();
+    }
 
-	function onMissingMethod( missingMethodName, missingMethodArguments ) {
-		return invoke( newRequest(), missingMethodName, missingMethodArguments );
-	}
+    function onMissingMethod( missingMethodName, missingMethodArguments ) {
+        return invoke( newRequest(), missingMethodName, missingMethodArguments );
+    }
 
 }
