@@ -36,11 +36,12 @@ moduleSettings = {
 Look up information about a phone number. Returns a configured `HyperRequest`
 instance.
 
-| Name           | Type          | Required? | Default | Description                                                                                |
-| -------------- | ------------- | --------- | ------- | ------------------------------------------------------------------------------------------ |
-| phoneNumber    | String        | `true`    |         | The phone number to look up                                                                |
-| withCallerName | Boolean       | `false`   | `false` | Should caller information be included in the response. (This costs extra.)                 |
-| addons         | Array<String> | `false`   | `[]`    | An optional array of addons to process and include in the response. (This may cost extra.) |
+| Name           | Type          | Required? | Default | Description                                                                                      |
+| -------------- | ------------- | --------- | ------- | ------------------------------------------------------------------------------------------------ |
+| phoneNumber    | String        | `true`    |         | The phone number to look up                                                                      |
+| withCallerName | Boolean       | `false`   | `false` | Should caller information be included in the response. (This costs extra.) [DEPRECATED]          |
+| types          | Array<String> | `false`   | `[]`    | An optional array of lookup types to process and include in the response. (This may cost extra.) |
+| addons         | Array<String> | `false`   | `[]`    | An optional array of addons to process and include in the response. (This may cost extra.)       |
 
 #### sms
 
