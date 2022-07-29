@@ -40,15 +40,15 @@ component singleton accessors="true" {
             .setUrl( "/v1/PhoneNumbers/#trim( arguments.phoneNumber )#" );
 
         if ( arguments.withCallerName ) {
-            req.withQueryParams( { "Type": "caller-name" } );
+            req.appendQueryParam( "Type", "caller-name" );
         }
 
         for ( var type in arguments.types ) {
-            req.withQueryParams( { "Type": type } );
+            req.appendQueryParam( "Type", type );
         }
 
         for ( var addon in arguments.addons ) {
-            req.withQueryParams( { "AddOns": addon } );
+            req.appendQueryParam( "AddOns", addon );
         }
 
         return req;
