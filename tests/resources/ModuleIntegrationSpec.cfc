@@ -3,13 +3,12 @@ component extends="coldbox.system.testing.BaseTestCase" {
     function beforeAll() {
         super.beforeAll();
 
-        getController().getModuleService()
-            .registerAndActivateModule( "twilio-sdk", "testingModuleRoot" );
+        getController().getModuleService().registerAndActivateModule( "twilio-sdk", "testingModuleRoot" );
     }
 
     /**
-    * @beforeEach
-    */
+     * @beforeEach
+     */
     function setupIntegrationTest() {
         setup();
     }
@@ -18,16 +17,16 @@ component extends="coldbox.system.testing.BaseTestCase" {
         var system = createObject( "java", "java.lang.System" );
 
         var envValue = system.getEnv( name );
-        if ( ! isNull( envValue ) ) {
+        if ( !isNull( envValue ) ) {
             return envValue;
         }
 
         var propValue = system.getProperty( name );
-        if ( ! isNull( propValue ) ) {
+        if ( !isNull( propValue ) ) {
             return propValue;
         }
 
-        if ( ! isNull( defaultValue ) ) {
+        if ( !isNull( defaultValue ) ) {
             return defaultValue;
         }
 

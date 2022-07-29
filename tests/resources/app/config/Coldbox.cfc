@@ -3,7 +3,7 @@ component {
 	/**
 	 * Configure the ColdBox App For Production
 	 */
-	function configure() {
+	function configure(){
 		/**
 		 * --------------------------------------------------------------------------
 		 * ColdBox Directives
@@ -138,9 +138,9 @@ component {
 		 * }
 		 */
 		moduleSettings = {
-			"twilio-sdk": {
-				accountSID = getSystemSetting( "TWILIO_TEST_ACCOUNT_SID" ),
-				authToken = getSystemSetting( "TWILIO_TEST_AUTHTOKEN" )
+			"twilio-sdk" : {
+				accountSID : getSystemSetting( "TWILIO_TEST_ACCOUNT_SID" ),
+				authToken  : getSystemSetting( "TWILIO_TEST_AUTHTOKEN" )
 			}
 		};
 
@@ -176,7 +176,7 @@ component {
 	/**
 	 * Development environment
 	 */
-	function development() {
+	function development(){
 		// coldbox.customErrorTemplate = "/coldbox/system/exceptions/BugReport.cfm"; // static bug reports
 		coldbox.customErrorTemplate = "/coldbox/system/exceptions/Whoops.cfm"; // interactive bug report
 	}

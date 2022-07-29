@@ -18,12 +18,12 @@ component singleton accessors="true" {
     /**
      * Look up information about a phone number.
      *
-	 * @phoneNumber    The phone number to look up.
+     * @phoneNumber    The phone number to look up.
      * @withCallerName Should caller information be included in the response.
-	 *                 (This costs extra.) [Deprecated in favor of @type] Default: false.
-	 * @types          An optional array of types of information to be
-	 *                 included in the response. Options include 'carrier'
-	 *                 and 'caller-name'. (This costs extra.)
+     *                 (This costs extra.) [Deprecated in favor of @type] Default: false.
+     * @types          An optional array of types of information to be
+     *                 included in the response. Options include 'carrier'
+     *                 and 'caller-name'. (This costs extra.)
      * @addons         An optional array of addons to process and include
      *                 in the response. (This may cost extra.)
      *
@@ -32,23 +32,23 @@ component singleton accessors="true" {
     function lookup(
         phoneNumber,
         withCallerName = false,
-		types = [],
+        types = [],
         addons = []
     ) {
         var req = newRequest()
             .setBaseUrl( "https://lookups.twilio.com" )
-			.setUrl( "/v1/PhoneNumbers/#trim( arguments.phoneNumber )#" );
+            .setUrl( "/v1/PhoneNumbers/#trim( arguments.phoneNumber )#" );
 
-		if ( arguments.withCallerName ) {
-			req.withQueryParams( { "Type": "caller-name" } );
+        if ( arguments.withCallerName ) {
+            req.withQueryParams( { "Type": "caller-name" } );
         }
 
-		for ( var type in arguments.types ) {
-			req.withQueryParams( { "Type": type } );
-		}
+        for ( var type in arguments.types ) {
+            req.withQueryParams( { "Type": type } );
+        }
 
-		for ( var addon in arguments.addons ) {
-			req.withQueryParams( { "AddOns": addon } );
+        for ( var addon in arguments.addons ) {
+            req.withQueryParams( { "AddOns": addon } );
         }
 
         return req;
@@ -68,11 +68,7 @@ component singleton accessors="true" {
         return newRequest()
             .setMethod( "POST" )
             .setUrl( "/Accounts/#accountSID#/Messages.json" )
-            .setBody( {
-                "From" = arguments.from,
-                "To"   = arguments.to,
-                "Body" = arguments.body
-            } );
+            .setBody( { "From": arguments.from, "To": arguments.to, "Body": arguments.body } );
     }
 
     /**
@@ -92,11 +88,7 @@ component singleton accessors="true" {
         required string twiml,
         struct additionalParams = {}
     ) {
-        var body = {
-            "From"  = arguments.from,
-            "To"    = arguments.to,
-            "Twiml" = arguments.twiml
-        };
+        var body = { "From": arguments.from, "To": arguments.to, "Twiml": arguments.twiml };
         structAppend( body, additionalParams );
 
         return newRequest()

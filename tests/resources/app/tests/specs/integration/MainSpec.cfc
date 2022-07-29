@@ -14,61 +14,59 @@
  *	* eventArguments : The struct of args to pass to the event
  *	* renderResults : Render back the results of the event
  *******************************************************************************/
-component
-	extends   ="coldbox.system.testing.BaseTestCase"
-	appMapping="/root"
-{
+component extends="coldbox.system.testing.BaseTestCase" appMapping="/root" {
 
 	/*********************************** LIFE CYCLE Methods ***********************************/
 
-	function beforeAll() {
+	function beforeAll(){
 		super.beforeAll();
 		// do your own stuff here
 	}
 
-	function afterAll() {
+	function afterAll(){
 		// do your own stuff here
 		super.afterAll();
 	}
 
 	/*********************************** BDD SUITES ***********************************/
 
-	function run() {
-		describe( "Main Handler", function() {
-			beforeEach( function( currentSpec ) {
+	function run(){
+		describe( "Main Handler", function(){
+			beforeEach( function( currentSpec ){
 				// Setup as a new ColdBox request, VERY IMPORTANT. ELSE EVERYTHING LOOKS LIKE THE SAME REQUEST.
 				setup();
 			} );
 
-			it( "can render the homepage", function() {
+			it( "can render the homepage", function(){
 				var event = this.get( "main.index" );
 				expect( event.getValue( name = "welcomemessage", private = true ) ).toBe( "Welcome to ColdBox!" );
 			} );
 
-			it( "can render some restful data", function() {
+			it( "can render some restful data", function(){
 				var event = this.post( "main.data" );
 
 				debug( event.getHandlerResults() );
 				expect( event.getRenderedContent() ).toBeJSON();
 			} );
 
-			it( "can do a relocation", function() {
+			it( "can do a relocation", function(){
 				var event = execute( event = "main.doSomething" );
 				expect( event.getValue( "relocate_event", "" ) ).toBe( "main.index" );
 			} );
 
-			it( "can startup executable code", function() {
+			it( "can startup executable code", function(){
 				var event = execute( "main.onAppInit" );
 			} );
 
-			it( "can handle exceptions", function() {
+			it( "can handle exceptions", function(){
 				// You need to create an exception bean first and place it on the request context FIRST as a setup.
 				var exceptionBean = createMock( "coldbox.system.web.context.ExceptionBean" ).init(
 					erroStruct   = structNew(),
 					extramessage = "My unit test exception",
 					extraInfo    = "Any extra info, simple or complex"
 				);
-				prepareMock( getRequestContext() ).setValue(
+				prepareMock( getRequestContext() )
+					.setValue(
 						name    = "exception",
 						value   = exceptionBean,
 						private = true
@@ -79,22 +77,22 @@ component
 				var event = execute( "main.onException" );
 			} );
 
-			describe( "Request Events", function() {
-				it( "fires on start", function() {
+			describe( "Request Events", function(){
+				it( "fires on start", function(){
 					var event = execute( "main.onRequestStart" );
 				} );
 
-				it( "fires on end", function() {
+				it( "fires on end", function(){
 					var event = execute( "main.onRequestEnd" );
 				} );
 			} );
 
-			describe( "Session Events", function() {
-				it( "fires on start", function() {
+			describe( "Session Events", function(){
+				it( "fires on start", function(){
 					var event = execute( "main.onSessionStart" );
 				} );
 
-				it( "fires on end", function() {
+				it( "fires on end", function(){
 					// Place a fake session structure here, it mimics what the handler receives
 					URL.sessionReference     = structNew();
 					URL.applicationReference = structNew();

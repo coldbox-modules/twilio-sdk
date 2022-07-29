@@ -19,18 +19,17 @@ component accessors="true" {
     function validate( expectedSignature, uri, params = {} ) {
         var paramsArray = params.keyArray();
         paramsArray.sort( "text" );
-        return hmacSha1( uri & paramsArray.map( function( key ) {
-            return key & params[key];
-        } ).toList( "" ) ) == expectedSignature;
+        return hmacSha1(
+            uri & paramsArray
+                .map( function( key ) {
+                    return key & params[ key ];
+                } )
+                .toList( "" )
+        ) == expectedSignature;
     }
 
     private function hmacSha1( string ) {
-        return toBase64(
-            binaryDecode(
-                HMAC( string, authToken, "HMACSHA1" ),
-                "hex"
-            )
-        );
+        return toBase64( binaryDecode( hmac( string, authToken, "HMACSHA1" ), "hex" ) );
     }
 
 }

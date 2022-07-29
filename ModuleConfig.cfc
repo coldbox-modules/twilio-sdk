@@ -7,13 +7,14 @@ component {
 
     function configure() {
         settings = {
-            accountSID = getSystemSetting( "TWILIO_ACCOUNT_SID", "" ),
-            authToken = getSystemSetting( "TWILIO_AUTHTOKEN", "" )
+            accountSID: getSystemSetting( "TWILIO_ACCOUNT_SID", "" ),
+            authToken: getSystemSetting( "TWILIO_AUTHTOKEN", "" )
         };
     }
 
     function onLoad() {
-        binder.map( "TwilioHyperClient@twilio-sdk" )
+        binder
+            .map( "TwilioHyperClient@twilio-sdk" )
             .to( "hyper.models.HyperBuilder" )
             .asSingleton()
             .initWith(
@@ -21,9 +22,8 @@ component {
                 password = settings.authToken,
                 baseURL = "https://api.twilio.com/2010-04-01",
                 bodyFormat = "formFields",
-                headers = {
-                    "Content-Type" = "application/x-www-form-urlencoded"
-                }
+                headers = { "Content-Type": "application/x-www-form-urlencoded" }
             );
     }
+
 }

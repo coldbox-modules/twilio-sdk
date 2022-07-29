@@ -14,6 +14,10 @@
     "shortDescription":"CFML SDK to interact with the Twilio API",
     "description":"CFML SDK to interact with the Twilio API",
     "type":"modules",
+    "scripts": {
+        "format": "cfformat run models/**/*.cfc,tests/Application.cfc,tests/resources/**/*.cfc,tests/specs/**/*.cfc,ModuleConfig.cfc --overwrite",
+        "format:check": "cfformat check models/**/*.cfc,tests/Application.cfc,tests/resources/**/*.cfc,tests/specs/**/*.cfc,ModuleConfig.cfc"
+    },
     "dependencies":{
         "hyper":"^3.4.0"
     },

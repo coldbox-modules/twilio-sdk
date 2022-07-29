@@ -28,7 +28,7 @@ component {
 	COLDBOX_APP_KEY       = "";
 
 	// application start
-	public boolean function onApplicationStart() {
+	public boolean function onApplicationStart(){
 		application.cbBootstrap = new coldbox.system.Bootstrap(
 			COLDBOX_CONFIG_FILE,
 			COLDBOX_APP_ROOT_PATH,
@@ -40,27 +40,27 @@ component {
 	}
 
 	// application end
-	public void function onApplicationEnd( struct appScope ) {
+	public void function onApplicationEnd( struct appScope ){
 		arguments.appScope.cbBootstrap.onApplicationEnd( arguments.appScope );
 	}
 
 	// request start
-	public boolean function onRequestStart( string targetPage ) {
+	public boolean function onRequestStart( string targetPage ){
 		// Process ColdBox Request
 		application.cbBootstrap.onRequestStart( arguments.targetPage );
 
 		return true;
 	}
 
-	public void function onSessionStart() {
+	public void function onSessionStart(){
 		application.cbBootStrap.onSessionStart();
 	}
 
-	public void function onSessionEnd( struct sessionScope, struct appScope ) {
+	public void function onSessionEnd( struct sessionScope, struct appScope ){
 		arguments.appScope.cbBootStrap.onSessionEnd( argumentCollection = arguments );
 	}
 
-	public boolean function onMissingTemplate( template ) {
+	public boolean function onMissingTemplate( template ){
 		return application.cbBootstrap.onMissingTemplate( argumentCollection = arguments );
 	}
 

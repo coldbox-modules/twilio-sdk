@@ -3,7 +3,7 @@ component extends="coldbox.system.ioc.config.Binder" {
 	/**
 	 * Configure WireBox, that's it!
 	 */
-	function configure() {
+	function configure(){
 		/**
 		 * --------------------------------------------------------------------------
 		 * WireBox Configuration (https://wirebox.ortusbooks.com)
