@@ -68,7 +68,7 @@ component singleton accessors="true" {
         return newRequest()
             .setMethod( "POST" )
             .setUrl( "/Accounts/#accountSID#/Messages.json" )
-            .setBody( { "From": arguments.from, "To": arguments.to, "Body": arguments.body } );
+            .setBody( { "From": arguments.from, "To": arguments.to, "Body": escapeNewlineCharacters( arguments.body ) } );
     }
 
     /**
@@ -103,6 +103,10 @@ component singleton accessors="true" {
 
     function onMissingMethod( missingMethodName, missingMethodArguments ) {
         return invoke( newRequest(), missingMethodName, missingMethodArguments );
+    }
+
+    private string function escapeNewlineCharacters( required string s ) {
+        return replace( arguments.s, "\n", chr( 10 ), "all" );
     }
 
 }

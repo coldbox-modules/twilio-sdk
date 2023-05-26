@@ -22,6 +22,17 @@ component extends="tests.resources.ModuleIntegrationSpec" appMapping="/app" {
 
                 expect( req ).toBeInstanceOf( "Hyper.models.HyperRequest", "req should be the HyperRequest still" );
             } );
+
+            it( "replaces \n characters with newlines", function() {
+                var req = twilioClient.sms( from = "+15005550006", to = "+18015550005", body = "Line 1\nLine 2" );
+
+                var smsBody = req.getBody().body;
+                expect( smsBody ).toHaveLength( 13 );
+                expect( asc( smsBody[ 7 ] ) ).toBe(
+                    10,
+                    "The seventh character should be a newline character (`chr( 10 )`)."
+                );
+            } );
         } );
     }
 
