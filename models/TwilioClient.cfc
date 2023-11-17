@@ -78,6 +78,7 @@ component singleton accessors="true" {
      * @from              The phone number the call is from.
      *                    This must be a valid Twilio number.
      * @twiml             The twiml XML instructions for the call.
+     * @URL               A URL to call to get Twiml instructions for the call.
      * @additionalParams  Any additional param to send with the request
      *
      * @returns           A configured HyperRequest instance.
@@ -85,10 +86,20 @@ component singleton accessors="true" {
     function call(
         required string to,
         required string from,
-        required string twiml,
+        string twiml,
+        string URL,
         struct additionalParams = {}
     ) {
-        var body = { "From": arguments.from, "To": arguments.to, "Twiml": arguments.twiml };
+        if ( isNull( arguments.twiml ) && isNull( arguments.URL ) ) {
+            throw( "Either a Twiml string or a URL is required." );
+        }
+
+        var body = { "From": arguments.from, "To": arguments.to };
+        if ( !isNull( arguments.URL ) ) {
+            body[ "URL" ] = arguments.URL;
+        } else {
+            body[ "Twiml" ] = arguments.twiml;
+        }
         structAppend( body, additionalParams );
 
         return newRequest()
