@@ -1,3 +1,17 @@
+# v2.3.1
+## 17 Nov 2023 — 18:32:08 UTC
+
+### fix
+
++ __calls:__ Fix for case-sensitive parameters
+ ([2bc1c3d](https://github.com/coldbox-modules/twilio-sdk/commit/2bc1c3dd3e553e021c6e794822f113e6cde636a8))
+
+### other
+
++ __\*:__ Merge remote-tracking branch 'origin/main'
+ ([4981c02](https://github.com/coldbox-modules/twilio-sdk/commit/4981c02ccff8a993730800e1ef5e644d2573893f))
+
+
 # v2.3.0
 ## 17 Nov 2023 — 18:07:25 UTC
 
