@@ -96,7 +96,7 @@ component singleton accessors="true" {
 
         var body = { "From": arguments.from, "To": arguments.to };
         if ( !isNull( arguments.URL ) ) {
-            body[ "URL" ] = arguments.URL;
+            body[ "Url" ] = arguments.URL;
         } else {
             body[ "Twiml" ] = arguments.twiml;
         }
