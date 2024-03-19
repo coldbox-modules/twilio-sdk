@@ -19,11 +19,11 @@
         "format:check":"cfformat check models/**/*.cfc,tests/Application.cfc,tests/resources/ModuleIntegrationSpec.cfc,tests/specs/**/*.cfc,ModuleConfig.cfc"
     },
     "dependencies":{
-        "hyper":"^4.0.0"
+        "hyper":"^7.5.0"
     },
     "devDependencies":{
-        "testbox":"^4.5.0+5",
-        "coldbox":"^6.6.1+2"
+        "testbox":"^5.0.0",
+        "coldbox":"^7.0.0"
     },
     "installPaths":{
         "testbox":"testbox/",
