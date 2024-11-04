@@ -53,6 +53,22 @@ Send an sms message. Returns a configured `HyperRequest` instance.
 | from | String | `true`    |         | The phone number the sms is from. This must be a valid Twilio number. |
 | body | String | `true`    |         | The body of the sms message.                                          |
 
+#### getSMS
+
+Get information of a SMS sent with Twilio
+
+| Name | Type   | Required? | Default | Description                                                           |
+| ---- | ------ | --------- | ------- | --------------------------------------------------------------------- |
+| sid  | String | `true`    |         | Sid of the Message                                                    |
+
+The information of the sms is in the field `data` as json of the returned object. 
+To get that information you need to deserialize it:
+
+```
+responseObj = getSMS(sid);
+smsData = deserializejson( responseObj.data );
+```
+
 ### Hyper Integration
 
 The Twilio SDK uses the Hyper HTTP Client under the hood. This entire power is
