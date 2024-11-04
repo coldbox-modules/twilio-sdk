@@ -72,6 +72,19 @@ component singleton accessors="true" {
     }
 
     /**
+     * Get the info of a SMS from Twilio
+     *
+     * @sid     Id of the SMS
+     *
+     * @returns A configured HyperRequest instance. The return data is in field: data
+     */
+    function getSMS( required string sid ) {
+        return newRequest()
+            .setMethod( "GET" )
+            .setUrl( "/Accounts/#variables.accountSID#/Messages/#arguments.sid#.json")
+    }
+
+    /**
      * Initiate a phone call
      *
      * @to                The phone number the call is going to.
