@@ -90,7 +90,7 @@ jobs:
           TWILIO_TEST_ACCOUNT_SID: ${{ secrets.TWILIO_TEST_ACCOUNT_SID }}
           TWILIO_TEST_AUTHTOKEN: ${{ secrets.TWILIO_TEST_AUTHTOKEN }}
         run: |
-          box server start serverConfigFile=server-${{ matrix.cfengine }} --noSaveSettings --debug
+          box server start serverConfigFile=server-${{ matrix.cfengine }}.json --noSaveSettings --debug
           # Install Adobe 2021 cfpm modules
           if [[ "${{ matrix.cfengine }}" == "adobe@2021" ]] ; then
             box run-script install:2021
