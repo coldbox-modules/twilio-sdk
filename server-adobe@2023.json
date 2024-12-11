@@ -11,7 +11,7 @@
         "rewrites":{
             "enable":"true"
         },
-        "webroot":"test-harness",
+        "webroot":"./",
         "aliases":{
             "/moduleroot/twilio-sdk":"./"
         }
