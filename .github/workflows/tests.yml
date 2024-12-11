@@ -108,10 +108,10 @@ jobs:
           box testbox run --verbose outputFile=tests/results/test-results outputFormats=json,antjunit
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: tests/results/**/*.xml
+          junit_files: tests/results/**/*.xml
           check_name: "${{ matrix.cfengine }} ColdBox ${{ matrix.coldboxVersion }} Test Results"
 
       - name: Upload Test Results to Artifacts
