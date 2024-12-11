@@ -1,0 +1,38 @@
+{
+	"adminPassword" : "coldbox",
+	"componentCacheEnabled":false,
+	"postParametersLimit" : 200,
+	"robustExceptionEnabled":true,
+	"saveClassFiles":false,
+	"systemErr":"System",
+	"systemOut":"System",
+	"thistimezone":"UTC",
+	"whitespaceManagement":"white-space-pref",
+    "debuggingEnabled":true,
+    "debuggingReportExecutionTimes":false,
+    "disableInternalCFJavaComponents":false,
+    "inspectTemplate":"always",
+    "requestTimeout":"0,0,0,90",
+	"datasources":{
+        "twilio-sdk":{
+            "bundleName": "${DB_BUNDLENAME}",
+			"bundleVersion": "${DB_BUNDLEVERSION}",
+            "blob":"true",
+            "class":"${DB_CLASS}",
+            "clob":"true",
+			"connectionLimit":"100",
+            "connectionTimeout":"1",
+            "custom":"useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC&useLegacyDatetimeCode=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true",
+            "database":"twilio-sdk",
+            "dbdriver":"MySQL",
+            "dsn":"jdbc:mysql://{host}:{port}/{database}",
+            "host":"${DB_HOST:127.0.0.1}",
+            "metaCacheTimeout":"60000",
+            "password":"${DB_PASSWORD}",
+            "port": "${DB_PORT:3306}",
+            "storage":"false",
+            "username": "${DB_USER:root}",
+			"validate":"false"
+        }
+	}
+}

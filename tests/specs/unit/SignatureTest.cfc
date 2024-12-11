@@ -14,7 +14,9 @@ component extends="testbox.system.BaseSpec" {
                     "Digits": "1234"
                 };
                 var expectedSignature = "GvWf1cFY/Q7PnoempGyD5oXAezc=";
-                expect( validator.validate( expectedSignature, uri, formParams ) ).toBeTrue( "Signature should have validated correctly" );
+                expect( validator.validate( expectedSignature, uri, formParams ) ).toBeTrue(
+                    "Signature should have validated correctly"
+                );
             } );
 
             it( "returns false for an invalid signature", function() {
@@ -29,7 +31,9 @@ component extends="testbox.system.BaseSpec" {
                     "Digits": "1234"
                 };
                 var invalidSignature = "invalid";
-                expect( validator.validate( invalidSignature, uri, formParams ) ).toBeFalse( "Signature should not have validated correctly" );
+                expect( validator.validate( invalidSignature, uri, formParams ) ).toBeFalse(
+                    "Signature should not have validated correctly"
+                );
             } );
         } );
     }

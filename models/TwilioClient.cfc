@@ -81,7 +81,7 @@ component singleton accessors="true" {
     function getSMS( required string sid ) {
         return newRequest()
             .setMethod( "GET" )
-            .setUrl( "/Accounts/#variables.accountSID#/Messages/#arguments.sid#.json")
+            .setUrl( "/Accounts/#variables.accountSID#/Messages/#arguments.sid#.json" )
     }
 
     /**
