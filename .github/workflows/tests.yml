@@ -70,7 +70,7 @@ jobs:
       #    printf "DB_BUNDLENAME=com.mysql.cj\n" >> .env
 
       - name: Cache CommandBox Dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         if: ${{ true }}
         with:
           path: ~/.CommandBox/artifacts
