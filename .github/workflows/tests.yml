@@ -28,48 +28,16 @@ jobs:
         cfengine: [ "lucee@5", "lucee@6", "adobe@2021", "adobe@2023" ]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      # Not Needed in this module
-      #- name: Setup Database and Fixtures
-      #  run: |
-      #    sudo /etc/init.d/mysql start
-      #    mysql -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} -e 'CREATE DATABASE coolblog;'
-      #    mysql -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} < tests/resources/coolblog.sql
+        uses: actions/checkout@v6
 
       - name: Setup Java
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
           distribution: "adopt"
           java-version: "11"
 
       - name: Setup CommandBox CLI
         uses: Ortus-Solutions/setup-commandbox@main
-
-      # Not Needed in this module
-      #- name: Setup Environment For Testing Process
-      #  working-directory: ./test-harness
-      #  run: |
-      #    # Setup .env
-      #    touch .env
-      #    # ENV
-      #    printf "DB_HOST=localhost\n" >> .env
-      #    printf "DB_DATABASE=mydatabase\n" >> .env
-      #    printf "DB_DRIVER=MySQL\n" >> .env
-      #    printf "DB_USER=${{ env.DB_USER }}\n" >> .env
-      #    printf "DB_PASSWORD=${{ env.DB_PASSWORD }}\n" >> .env
-      #    printf "DB_CLASS=com.mysql.cj.jdbc.Driver\n" >> .env
-      #    printf "DB_BUNDLEVERSION=8.0.19\n" >> .env
-      #    printf "DB_BUNDLENAME=com.mysql.cj\n" >> .env
-
-      - name: Cache CommandBox Dependencies
-        uses: actions/cache@v1
-        if: ${{ true }}
-        with:
-          path: ~/.CommandBox/artifacts
-          key: ${{ runner.OS }}-commandbox-cache-${{ hashFiles( 'box.json' ) }}-${{ hashFiles( 'box.json' ) }}
-          restore-keys: |
-            ${{ runner.OS }}-commandbox-cache-${{ hashFiles( 'box.json' ) }}-${{ hashFiles( 'box.json' ) }}
 
       - name: Install Test Harness Dependencies
         run: |
@@ -100,7 +68,7 @@ jobs:
           box testbox run --verbose outputFile=tests/results/test-results outputFormats=json,antjunit
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
           files: tests/results/**/*.xml
@@ -108,7 +76,7 @@ jobs:
 
       - name: Upload Test Results to Artifacts
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v6
         with:
           name: test-results-${{ matrix.cfengine }}
           path: |
@@ -121,7 +89,7 @@ jobs:
 
       - name: Upload Debug Logs To Artifacts
         if: ${{ failure() }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v6
         with:
           name: Failure Debugging Info - ${{ matrix.cfengine }}
           path: |

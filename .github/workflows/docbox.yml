@@ -14,7 +14,7 @@ jobs:
     container: ghcr.io/foundeo/cfml-ci-tools/cfml-ci-tools:1.0.6
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Generate API Docs
         run: box run-script build:docs

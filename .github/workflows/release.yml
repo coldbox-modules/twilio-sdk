@@ -32,24 +32,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Java
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
           distribution: "adopt"
           java-version: "11"
 
-      - name: Cache CommandBox Dependencies
-        uses: actions/cache@v1
-        if: ${{ true }}
-        with:
-          path: ~/.CommandBox/artifacts
-          key: ${{ runner.OS }}-commandbox-cache-${{ hashFiles( 'box.json' ) }}-${{ hashFiles( 'test-harness/box.json' ) }}
-          restore-keys: |
-            ${{ runner.OS }}-commandbox-cache-${{ hashFiles( 'box.json' ) }}-${{ hashFiles( 'test-harness/box.json' ) }}
       - name: Setup CommandBox
         uses: Ortus-Solutions/setup-commandbox@main
         with:
@@ -79,25 +71,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: box semantic-release
-
-      # - name: Upload Build Artifacts
-      #   if: success()
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: twilio-sdk
-      #     path: |
-      #       .artifacts/**/*
-
-      # - name: Upload Binaries to S3
-      #   uses: jakejarvis/s3-sync-action@master
-      #   with:
-      #     args: --acl public-read
-      #   env:
-      #     AWS_S3_BUCKET: "downloads.ortussolutions.com"
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_SECRET }}
-      #     SOURCE_DIR: ".artifacts/${{ env.MODULE_ID }}"
-      #     DEST_DIR: "ortussolutions/coldbox-modules/${{ env.MODULE_ID }}"
 
       - name: Inform Slack of Build
         if: ${{ always() }}
