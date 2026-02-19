@@ -3,6 +3,7 @@ name: twilio-sdk CI
 permissions:
   contents: write
   pull-requests: write
+  checks: write
 
 
 # Only on Development we build snapshots
