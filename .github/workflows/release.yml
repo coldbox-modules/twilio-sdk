@@ -1,5 +1,10 @@
 name: twilio-sdk CI
 
+permissions:
+  contents: write
+  pull-requests: write
+
+
 # Only on Development we build snapshots
 on:
   push:
@@ -35,6 +40,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Java
         uses: actions/setup-java@v5
@@ -60,18 +66,16 @@ jobs:
             echo "BRANCH=development" >> $GITHUB_ENV
           fi
 
-      - name: Install and Configure Semantic Release
+      - name: Install, Configure, and Run Semantic Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           box install commandbox-semantic-release
           box config set endpoints.forgebox.APIToken=${{ secrets.FORGEBOX_TOKEN }}
           box config set modules.commandbox-semantic-release.targetBranch=main
           box config set modules.commandbox-semantic-release.plugins='{ "VerifyConditions": "GitHubActionsConditionsVerifier@commandbox-semantic-release", "FetchLastRelease": "ForgeBoxReleaseFetcher@commandbox-semantic-release", "RetrieveCommits": "JGitCommitsRetriever@commandbox-semantic-release", "ParseCommit": "ConventionalChangelogParser@commandbox-semantic-release", "FilterCommits": "DefaultCommitFilterer@commandbox-semantic-release", "AnalyzeCommits": "DefaultCommitAnalyzer@commandbox-semantic-release", "VerifyRelease": "NullReleaseVerifier@commandbox-semantic-release", "GenerateNotes": "GitHubMarkdownNotesGenerator@commandbox-semantic-release", "UpdateChangelog": "FileAppendChangelogUpdater@commandbox-semantic-release", "CommitArtifacts": "NullArtifactsCommitter@commandbox-semantic-release", "PublishRelease": "ForgeBoxReleasePublisher@commandbox-semantic-release", "PublicizeRelease": "GitHubReleasePublicizer@commandbox-semantic-release" }'
-
-      - name: Run Semantic Release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: box semantic-release
-
+          box semantic-release
+        
       - name: Inform Slack of Build
         if: ${{ always() }}
         uses: rtCamp/action-slack-notify@v2
